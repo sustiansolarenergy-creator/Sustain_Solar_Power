@@ -1497,6 +1497,139 @@ function calculateSolar(){
 
 </style>
 
+
+
+
+<section class="py-5 bg-light" id="bill-comparison">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Before & After Installing Solar</h2>
+      <p class="text-muted">See how much our customers save every month</p>
+    </div>
+
+    <div class="row align-items-center g-4">
+
+      <!-- BEFORE -->
+      <div class="col-md-6">
+        <div class="card border-0 shadow h-100 text-center">
+          <div class="card-body">
+            <h5 class="fw-bold text-danger mb-3">Before Solar</h5>
+            <p id="beforeVal" class="display-6 fw-bold text-danger">₹4500</p>
+            <p class="text-muted mb-0">Average monthly EB bill</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="col-md-6">
+        <div class="card border-0 shadow h-100 text-center">
+          <div class="card-body">
+            <h5 class="fw-bold text-success mb-3">After Solar</h5>
+            <p id="afterVal" class="display-6 fw-bold text-success">₹350</p>
+            <p class="text-muted mb-0">Net EB bill after solar</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BIG SAVINGS CIRCLE -->
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center">
+        <div class="saving-circle">
+          <div class="circle-inner">
+            <h2 id="savePercent">0%</h2>
+            <p>EB Bill Saved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAVING AMOUNT -->
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <p id="monthlySave" class="display-6 fw-bold text-primary mb-0"></p>
+        <small id="yearlySave" class="text-muted"></small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+#bill-comparison .card:hover{
+  transform:scale(1.03);
+  transition:.3s ease;
+}
+
+.saving-circle{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:#e9ecef;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.circle-inner{
+  width:160px;
+  height:160px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.circle-inner h2{
+  margin:0;
+  font-size:42px;
+  font-weight:800;
+  color:#28a745;
+}
+
+.circle-inner p{
+  margin:0;
+  font-size:14px;
+  color:#666;
+  font-weight:600;
+}
+</style>
+
+<script>
+(function(){
+  const before = 4500;
+  const after = 350;
+
+  const monthlySaving = before - after;
+  const yearlySaving = monthlySaving * 12;
+
+  const percent = Math.round((monthlySaving / before) * 100);
+  const angle = Math.round((percent / 100) * 360);
+
+  document.getElementById("savePercent").innerText = percent + "%";
+  document.getElementById("monthlySave").innerText =
+    "₹" + monthlySaving.toLocaleString() + " / month";
+  document.getElementById("yearlySave").innerText =
+    "₹" + yearlySaving.toLocaleString() + " per year";
+
+  document.querySelector(".saving-circle").style.background =
+    `conic-gradient(#28a745 0deg ${angle}deg, #e9ecef ${angle}deg 360deg)`;
+})();
+</script>
+
+
+
+
+
+
+
+
 <section class="py-5 bg-light" id="warranty-amc">
   <div class="container">
 

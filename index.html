@@ -493,8 +493,29 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
 
   let animated = false;
 
-  function animateCircle(el, color, targetPct, textEl){
-    const duration = 1200; // ms
+  // 🔥 REVERSE animation: 100 -> target
+  function animateReverse(el, color, targetPct, textEl){
+    const duration = 1400; // ms
+    const start = performance.now();
+    const startPct = 100;
+
+    function frame(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const pct = Math.round(startPct - (progress * (startPct - targetPct)));
+      const deg = (pct / 100) * 360;
+
+      el.style.background =
+        `conic-gradient(${color} 0deg ${deg}deg, #e9ecef ${deg}deg 360deg)`;
+      textEl.innerText = pct + "%";
+
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // Normal forward animation for saving
+  function animateForward(el, color, targetPct, textEl){
+    const duration = 1400;
     const start = performance.now();
 
     function frame(now){
@@ -511,13 +532,17 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
     requestAnimationFrame(frame);
   }
 
-  // Trigger when section comes into view
+  // Trigger when visible
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting && !animated){
         animated = true;
-        animateCircle(afterEl, "#dc3545", afterPctTarget, afterTxt);
-        animateCircle(saveEl,  "#28a745", savePctTarget,  saveTxt);
+
+        // 🔴 AFTER: 100% ➜ 8%
+        animateReverse(afterEl, "#dc3545", afterPctTarget, afterTxt);
+
+        // 🟢 SAVING: 0% ➜ 92%
+        animateForward(saveEl, "#28a745", savePctTarget, saveTxt);
       }
     });
   }, { threshold: 0.4 });
@@ -525,6 +550,7 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
   observer.observe(document.getElementById("bill-comparison"));
 })();
 </script>
+
 
 
 

@@ -144,6 +144,11 @@ window.addEventListener("load", function () {
                 </div> -->
                  <a href="#FAQ1" class="nav-item nav-link">FAQ</a>
                 <a href="#contactus" class="nav-item nav-link">Contact</a>
+
+
+                 <a href="#EBBILL" class="nav-item nav-link">EB Bill Calculator</a>
+
+
             </div>
             <a href="#solarFormm" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
@@ -1706,6 +1711,165 @@ function calculateSolar(){
     </div>
   </div>
 </section>
+
+
+
+
+<p  ID="EBBILL"></p>
+    <br>
+
+
+
+<section style="
+padding:50px;
+background:linear-gradient(135deg,#f8fbff,#eef4f8);
+font-family:'Segoe UI',Arial">
+
+<h2 style="
+text-align:center;
+color:#c62828;
+font-size:32px;
+letter-spacing:1px;
+margin-bottom:30px">
+EB BILL CALCULATOR
+</h2>
+
+<div style="
+max-width:1000px;
+margin:auto;
+background:#ffffff;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.12)">
+
+<!-- INPUT CARD -->
+<div style="
+display:flex;
+justify-content:center;
+margin-bottom:30px">
+
+<div style="
+background:#f1f8ff;
+padding:20px 30px;
+border-radius:14px;
+border-left:6px solid #1e88e5">
+
+<label style="
+font-weight:600;
+color:#0d47a1;
+font-size:16px">
+Consumed Units
+</label><br><br>
+
+<input type="number" id="units" value="2300"
+oninput="calcEB()"
+style="
+padding:14px 16px;
+width:240px;
+font-size:18px;
+border-radius:10px;
+border:2px solid #1e88e5;
+outline:none">
+</div>
+
+</div>
+
+<!-- TABLE -->
+<div style="overflow-x:auto">
+
+<table style="
+width:100%;
+border-collapse:separate;
+border-spacing:0;
+font-size:15px">
+
+<thead>
+<tr style="background:#1e88e5;color:#fff">
+<th style="padding:14px;border-radius:12px 0 0 0">From</th>
+<th>To</th>
+<th>Units</th>
+<th>Rate (₹)</th>
+<th style="border-radius:0 12px 0 0">Amount (₹)</th>
+</tr>
+</thead>
+
+<tbody id="slabTable"></tbody>
+
+<tfoot>
+<tr style="
+background:#2e7d32;
+color:#fff;
+font-weight:bold;
+font-size:17px">
+<td colspan="4" style="padding:16px">
+TOTAL EB AMOUNT
+</td>
+<td id="totalAmount">₹ 0</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+function calcEB(){
+
+  const slabs = [
+    {from:1,to:100,rate:0,bg:"#f1f8e9"},
+    {from:101,to:400,rate:4.7,bg:"#e3f2fd"},
+    {from:401,to:500,rate:6.3,bg:"#fffde7"},
+    {from:501,to:600,rate:8.4,bg:"#fce4ec"},
+    {from:601,to:800,rate:9.45,bg:"#ede7f6"},
+    {from:801,to:1000,rate:10.5,bg:"#e0f2f1"},
+    {from:1001,to:Infinity,rate:11.55,bg:"#ffebee"}
+  ];
+
+  let units = parseInt(document.getElementById("units").value) || 0;
+  let remaining = units;
+  let total = 0;
+  let rows = "";
+
+  slabs.forEach(s=>{
+    if(remaining<=0) return;
+
+    let u = Math.min(
+      remaining,
+      s.to===Infinity?remaining:s.to-s.from+1
+    );
+
+    let amt = u * s.rate;
+    remaining -= u;
+    total += amt;
+
+    rows += `
+      <tr style="background:${s.bg}">
+        <td style="padding:12px">${s.from}</td>
+        <td>${s.to===Infinity?units:s.to}</td>
+        <td>${u}</td>
+        <td>${s.rate}</td>
+        <td>${amt.toFixed(2)}</td>
+      </tr>
+    `;
+  });
+
+  document.getElementById("slabTable").innerHTML = rows;
+  document.getElementById("totalAmount").innerText =
+    "₹ " + total.toLocaleString();
+}
+
+calcEB();
+</script>
+
+</section>
+
+
+
+
+
+
 
 
 

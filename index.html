@@ -397,6 +397,143 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
 
 
 
+<section class="py-5 bg-light" id="bill-comparison">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Before & After Installing Solar</h2>
+      <p class="text-muted">Visual comparison with percentage impact</p>
+    </div>
+
+    <div class="row justify-content-center g-4 text-center">
+
+      <!-- BEFORE -->
+      <div class="col-md-4">
+        <div class="circle before-circle">
+          <div class="circle-inner">
+            <h3>100%</h3>
+            <p>Electricity Bill</p>
+            <small>₹4500</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="col-md-4">
+        <div class="circle after-circle">
+          <div class="circle-inner">
+            <h3 id="afterPercent">0%</h3>
+            <p>Solar Bill</p>
+            <small>₹350</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAVING -->
+      <div class="col-md-4">
+        <div class="circle saving-circle">
+          <div class="circle-inner">
+            <h3 id="savePercent">0%</h3>
+            <p>Bill Saved</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+      <p id="monthlySave" class="display-6 fw-bold text-success mb-0"></p>
+      <small id="yearlySave" class="text-muted"></small>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.circle{
+  width:220px;height:220px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);margin:auto;
+  background:#e9ecef;
+}
+.circle-inner{
+  width:150px;height:150px;background:#fff;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.circle-inner h3{margin:0;font-size:36px;font-weight:800}
+.circle-inner p{margin:0;font-size:14px;font-weight:600;color:#666}
+.circle-inner small{font-size:13px;color:#999}
+
+/* Static before */
+.before-circle{
+  background:conic-gradient(#dc3545 0deg 360deg);
+}
+</style>
+
+<script>
+(function(){
+  const before = 4500;
+  const after  = 350;
+
+  const afterPctTarget = Math.round((after / before) * 100); // ~8%
+  const savePctTarget  = 100 - afterPctTarget;               // ~92%
+
+  const monthlySaving = before - after;
+  const yearlySaving  = monthlySaving * 12;
+
+  const afterEl  = document.querySelector(".after-circle");
+  const saveEl   = document.querySelector(".saving-circle");
+  const afterTxt = document.getElementById("afterPercent");
+  const saveTxt  = document.getElementById("savePercent");
+
+  document.getElementById("monthlySave").innerText =
+    "₹" + monthlySaving.toLocaleString() + " / month saved";
+  document.getElementById("yearlySave").innerText =
+    "₹" + yearlySaving.toLocaleString() + " per year";
+
+  let animated = false;
+
+  function animateCircle(el, color, targetPct, textEl){
+    const duration = 1200; // ms
+    const start = performance.now();
+
+    function frame(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const pct = Math.round(progress * targetPct);
+      const deg = (pct / 100) * 360;
+
+      el.style.background =
+        `conic-gradient(${color} 0deg ${deg}deg, #e9ecef ${deg}deg 360deg)`;
+      textEl.innerText = pct + "%";
+
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // Trigger when section comes into view
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !animated){
+        animated = true;
+        animateCircle(afterEl, "#dc3545", afterPctTarget, afterTxt);
+        animateCircle(saveEl,  "#28a745", savePctTarget,  saveTxt);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observer.observe(document.getElementById("bill-comparison"));
+})();
+</script>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1425,142 +1562,6 @@ function calculateSolar(){
   transition: .3s ease;
 }
 </style>
-
-<section class="py-5 bg-light" id="bill-comparison">
-  <div class="container">
-
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Before & After Installing Solar</h2>
-      <p class="text-muted">Visual comparison with percentage impact</p>
-    </div>
-
-    <div class="row justify-content-center g-4 text-center">
-
-      <!-- BEFORE -->
-      <div class="col-md-4">
-        <div class="circle before-circle">
-          <div class="circle-inner">
-            <h3>100%</h3>
-            <p>Electricity Bill</p>
-            <small>₹4500</small>
-          </div>
-        </div>
-      </div>
-
-      <!-- AFTER -->
-      <div class="col-md-4">
-        <div class="circle after-circle">
-          <div class="circle-inner">
-            <h3 id="afterPercent">0%</h3>
-            <p>Solar Bill</p>
-            <small>₹350</small>
-          </div>
-        </div>
-      </div>
-
-      <!-- SAVING -->
-      <div class="col-md-4">
-        <div class="circle saving-circle">
-          <div class="circle-inner">
-            <h3 id="savePercent">0%</h3>
-            <p>Bill Saved</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="text-center mt-4">
-      <p id="monthlySave" class="display-6 fw-bold text-success mb-0"></p>
-      <small id="yearlySave" class="text-muted"></small>
-    </div>
-
-  </div>
-</section>
-
-<style>
-.circle{
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
-  margin:auto;
-}
-
-.circle-inner{
-  width:150px;
-  height:150px;
-  background:#fff;
-  border-radius:50%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
-
-.circle-inner h3{
-  margin:0;
-  font-size:36px;
-  font-weight:800;
-}
-
-.circle-inner p{
-  margin:0;
-  font-size:14px;
-  font-weight:600;
-  color:#666;
-}
-
-.circle-inner small{
-  font-size:13px;
-  color:#999;
-}
-
-/* Base colors */
-.before-circle{
-  background:conic-gradient(#dc3545 0deg 360deg);
-}
-
-.after-circle{
-  background:#e9ecef;
-}
-
-.saving-circle{
-  background:#e9ecef;
-}
-</style>
-
-<script>
-(function(){
-  const before = 4500;
-  const after = 350;
-
-  const afterPercent = Math.round((after / before) * 100);
-  const savePercent = 100 - afterPercent;
-
-  const monthlySaving = before - after;
-  const yearlySaving = monthlySaving * 12;
-
-  // Update text
-  document.getElementById("afterPercent").innerText = afterPercent + "%";
-  document.getElementById("savePercent").innerText = savePercent + "%";
-
-  document.getElementById("monthlySave").innerText =
-    "₹" + monthlySaving.toLocaleString() + " / month saved";
-  document.getElementById("yearlySave").innerText =
-    "₹" + yearlySaving.toLocaleString() + " per year";
-
-  // Circle fills
-  document.querySelector(".after-circle").style.background =
-    `conic-gradient(#dc3545 0deg, #dc3545 28.8deg, rgb(233, 236, 239) 0deg)`;
-
-  document.querySelector(".saving-circle").style.background =
-    `conic-gradient(#28a745 0deg ${(savePercent/100)*360}deg, #e9ecef 0deg)`;
-})();
-</script>
 
 
 

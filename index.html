@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Solartec - Renewable Energy Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div> -->
+    <!-- Spinner End -->
+    <!-- Spinner Start -->
+<div id="spinner"
+  class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex flex-column align-items-center justify-content-center">
+  
+  <img src="img/logo.png" alt="Loading" class="loader-logo">
+
+</div>
+<style>
+#spinner {
+  z-index: 9999;
+}
+
+#spinner .loader-logo {
+  width: 300px;
+  animation: spinPulse 4.6s ease-in-out infinite;
+}
+
+/* Text without extra HTML */
+#spinner::after {
+  content: "Loading...";
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6c757d;
+  letter-spacing: 1px;
+}
+
+
+
+</style>
+<script>
+window.addEventListener("load", function () {
+  const spinner = document.getElementById("spinner");
+  spinner.classList.remove("show");
+  spinner.style.opacity = "0";
+  spinner.style.transition = "opacity .4s ease";
+
+  setTimeout(() => {
+    spinner.style.display = "none";
+  }, 400);
+});
+</script>
+
+<!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <!-- <div class="container-fluid bg-dark p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>123 Street, New York, USA</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+012 345 6789</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+       <!--  <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <h2 class="m-0 text-primary">SusTain Solar</h2> -->
+        </a>
+        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+    <img src="img\logo.png" alt="SusTain Solar Logo" style="max-height: 80px;">
+</a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+               <!--  <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="project.html" class="nav-item nav-link">Project</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="feature.html" class="dropdown-item">Feature</a>
+                        <a href="quote.html" class="dropdown-item">Free Quote</a>
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+            </div>
+            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <style>
+    .owl-carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* This makes it act like background-size: cover */
+}
+
+.owl-carousel-inner {
+    position: relative;
+    z-index: 1; /* Puts the text on top of the video */
+    background: rgba(0, 0, 0, 0.4); /* Optional: darkens video to make text readable */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+    </style>
+
+
+
+    <div class="owl-carousel-item position-relative">
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="img\mainvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="owl-carousel-inner">
+        <div class="container">
+            <div class="row justify-content-start">
+
+                <div class="col-10 col-lg-8">
+                    <h1 class="display-2 text-white slideInDown">Still paying for electricity?</h1>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Switch to solar. Let the sun pay your bills.</p>
+                   <a href="" class="btn btn-primary rounded-pill py-3 px-5 slideInLeft">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Carousel Start -->
+    <!-- <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-1.jpg'>">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-2.jpg'>">
+                <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-3.jpg'>">
+                <img class="img-fluid" src="img/carousel-3.jpg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+    <!-- Carousel End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users text-white"></i>
+                        </div>
+                        <h1 class="mb-0" data-toggle="counter-up">3453</h1>
+                    </div>
+                    <h5 class="mb-3">Happy Households</h5>
+                    <span>We’ve helped thousands of families slash their electricity bills and transition to 100% clean, renewable energy.</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        <h1 class="mb-0" data-toggle="counter-up">4234</h1>
+                    </div>
+                    <h5 class="mb-3">Systems Installed</h5>
+                    <span>From rooftop residential setups to massive commercial solar farms, we deliver precision-engineered energy solutions.</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        <h1 class="mb-0" data-toggle="counter-up">3123</h1>
+                    </div>
+                    <h5 class="mb-3">MW Generated</h5>
+                    <span>Our installations have contributed Megawatts of green power to the grid, significantly reducing carbon footprints nationwide.</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users-cog text-white"></i>
+                        </div>
+                        <h1 class="mb-0" data-toggle="counter-up">1831</h1>
+                    </div>
+                    <h5 class="mb-3">Solar Specialists</h5>
+                    <span>Our team of NABCEP-certified installers and energy consultants ensures your system performs at peak efficiency for decades.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature Start -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <h6 class="text-primary">About Us</h6>
+                        <h1 class="mb-4">10+ Years Experience In Solar & Renewable Energy Industry</h1>
+                        <p>At Sustain Solar Power, we are committed to accelerating the world’s transition to sustainable energy. With over two decades of expertise, we provide high-performance solar solutions that empower homeowners and businesses to take control of their energy future while reducing their environmental impact.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>Precision Engineering: Custom-designed solar layouts optimized for maximum sunlight capture and energy yield.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>Tier-1 Technology: We use only the highest-rated solar panels and smart inverters for long-term reliability.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>End-to-End Service: From initial site assessment and government permits to seamless installation and maintenance.</p>
+                        <a href="" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="text-primary">Our Specialized Solar Services</h6>
+                <h1 class="mb-4">We Are Pioneers In The World Of Renewable Energy</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-1.jpg" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon">
+                                <i class="fa fa-solar-panel fa-3x"></i>
+                            </div>
+                            <h4 class="mb-3">On-Grid Rooftop Solar</h4>
+                            <p>Perfect for homes and offices in TN to reduce EB bills. Includes Net-Metering to sell excess power back to the grid</p>
+                            <a class="small fw-medium" href="">Up to 90% Bill Savings<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-2.jpg" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon">
+                                <i class="fa fa-solar-panel fa-3x"></i>
+                            </div>
+                            <h4 class="mb-3">Industrial Solar Power</h4>
+                            <p>Custom MW-scale solutions for factories in hubs like Coimbatore and Sriperumbudur. High-efficiency panels for heavy machinery.</p>
+                            <a class="small fw-medium" href="">Tax Benefits (AD)<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-3.jpg" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon">
+                                <i class="fa fa-solar-panel fa-3x"></i>
+                            </div>
+                            <h4 class="mb-3">Off Grid Battery Systems</h4>
+                            <p>Ideal for rural areas or farms with frequent power cuts. Independent power storage using high-quality batteries.</p>
+                            <a class="small fw-medium" href="">24/7 Power Backup<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon">
+                                <i class="fa fa-solar-panel fa-3x"></i>
+                            </div>
+                            <h4 class="mb-3">Agricultural Solar Pumps</h4>
+                            <p>Helping TN farmers with reliable irrigation solutions that run entirely on sunlight.</p>
+                            <a class="small fw-medium" href="">Zero Fuel Costs<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-5.jpg" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon">
+                                <i class="fa fa-solar-panel fa-3x"></i>
+                            </div>
+                            <h4 class="mb-3">Solar Maintenance (AMC)</h4>
+                            <p>Professional cleaning and health checks to ensure your panels produce maximum power in the TN heat.</p>
+                            <a class="small fw-medium" href="">Peak Performance<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-6.jpg" alt="">
+                        <div class="position-relative p-4 pt-0">
+                            <div class="service-icon">
+                                <i class="fa fa-solar-panel fa-3x"></i>
+                            </div>
+                            <h4 class="mb-3">Government Subsidy Help</h4>
+                            <p>We are experts in the PM Surya Ghar Muft Bijli Yojana and TANGEDCO processes to get you the maximum subsidy.</p>
+                            <a class="small fw-medium" href="">Reduced Initial Cost<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <section class="faq-container" style="padding: 60px 20px; background-color: #f4f7f6; font-family: sans-serif;">
+    <div style="max-width: 900px; margin: auto;">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h4 style="color: #ff6600; text-transform: uppercase; letter-spacing: 2px; margin: 0;">FAQ</h4>
+            <h2 style="font-size: 32px; color: #1a2e35; margin-top: 10px;">Expert Answers for Solar in Tamil Nadu</h2>
+        </div>
+
+        <div class="faq-card" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <button class="solar-accordion" style="width: 100%; padding: 20px; border: none; outline: none; background: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: #333; text-align: left; transition: 0.3s;">
+                How much subsidy can I get for my home in TN?
+                <span class="icon" style="font-size: 24px; color: #ff6600;">+</span>
+            </button>
+            <div class="panel" style="max-height: 0; overflow: hidden; transition: all 0.4s ease-in-out; background: #fff;">
+                <p style="padding: 0 20px 20px 20px; color: #555; line-height: 1.6; margin: 0;">
+                    Under the PM Surya Ghar scheme, residential customers in Tamil Nadu get: 1kW (₹30,000), 2kW (₹60,000), and 3kW+ (₹78,000). We assist with the TANGEDCO portal application and paperwork.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-card" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <button class="solar-accordion" style="width: 100%; padding: 20px; border: none; outline: none; background: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: #333; text-align: left; transition: 0.3s;">
+                Will it work during the monsoon or heavy rains in Chennai?
+                <span class="icon" style="font-size: 24px; color: #ff6600;">+</span>
+            </button>
+            <div class="panel" style="max-height: 0; overflow: hidden; transition: all 0.4s ease-in-out; background: #fff;">
+                <p style="padding: 0 20px 20px 20px; color: #555; line-height: 1.6; margin: 0;">
+                    Yes! Solar panels work on light, not heat. During rainy days, production might drop by 60-70%, but the system will still generate power. Plus, the rain helps naturally wash away dust from the panels.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-card" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <button class="solar-accordion" style="width: 100%; padding: 20px; border: none; outline: none; background: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: #333; text-align: left; transition: 0.3s;">
+                What is the maintenance needed for the panels?
+                <span class="icon" style="font-size: 24px; color: #ff6600;">+</span>
+            </button>
+            <div class="panel" style="max-height: 0; overflow: hidden; transition: all 0.4s ease-in-out; background: #fff;">
+                <p style="padding: 0 20px 20px 20px; color: #555; line-height: 1.6; margin: 0;">
+                    Solar is very low maintenance. In Tamil Nadu, we recommend cleaning the panels with plain water once every 15 days to remove dust and bird droppings. No professional chemicals are required.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-card" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <button class="solar-accordion" style="width: 100%; padding: 20px; border: none; outline: none; background: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: #333; text-align: left; transition: 0.3s;">
+                How long does the installation take?
+                <span class="icon" style="font-size: 24px; color: #ff6600;">+</span>
+            </button>
+            <div class="panel" style="max-height: 0; overflow: hidden; transition: all 0.4s ease-in-out; background: #fff;">
+                <p style="padding: 0 20px 20px 20px; color: #555; line-height: 1.6; margin: 0;">
+                    The physical installation on your rooftop usually takes only 2 to 3 days. However, the TANGEDCO net-metering approval and meter change-over can take 3 to 4 weeks depending on the local EB office.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-card" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <button class="solar-accordion" style="width: 100%; padding: 20px; border: none; outline: none; background: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 600; color: #333; text-align: left; transition: 0.3s;">
+                What is the lifespan of a solar system?
+                <span class="icon" style="font-size: 24px; color: #ff6600;">+</span>
+            </button>
+            <div class="panel" style="max-height: 0; overflow: hidden; transition: all 0.4s ease-in-out; background: #fff;">
+                <p style="padding: 0 20px 20px 20px; color: #555; line-height: 1.6; margin: 0;">
+                    Our Tier-1 solar panels come with a performance warranty of 25 years. Most systems continue to produce power even after 30 years, though the efficiency may slightly decrease over time.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const acc = document.getElementsByClassName("solar-accordion");
+        
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].onclick = function() {
+                // Toggle between adding and removing the "active" class
+                this.classList.toggle("active");
+
+                const panel = this.nextElementSibling;
+                const icon = this.querySelector(".icon");
+
+                if (panel.style.maxHeight && panel.style.maxHeight !== "0px") {
+                    // It's open, so close it
+                    panel.style.maxHeight = "0px";
+                    icon.innerHTML = "+";
+                    this.style.color = "#333";
+                } else {
+                    // It's closed, so open it
+                    // Close all other panels first (Optional - for a cleaner look)
+                    for (let j = 0; j < acc.length; j++) {
+                        acc[j].nextElementSibling.style.maxHeight = "0px";
+                        acc[j].querySelector(".icon").innerHTML = "+";
+                        acc[j].style.color = "#333";
+                    }
+                    
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    icon.innerHTML = "−";
+                    this.style.color = "#ff6600";
+                }
+            };
+        }
+    });
+</script>
+
+
+
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <h6 class="text-primary">Why Choose Us!</h6>
+                        <h1 class="mb-4">Complete Commercial & Residential Solar Systems</h1>
+                        <p class="mb-4 pb-2">We provide customized solar energy solutions designed to withstand the unique climate of Tamil Nadu. Whether you are looking to power your home or a large-scale industrial facility, our high-performance systems ensure maximum energy harvest and long-term durability.</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-check text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Quality Services</p>
+                                        <h5 class="mb-0">Best-in-class solar tech.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-user-check text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Expert Workers</p>
+                                        <h5 class="mb-0">TN's top solar engineers.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-drafting-compass text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Free Consultation</p>
+                                        <h5 class="mb-0">Free site visit & quote.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-headphones text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Customer Support</p>
+                                        <h5 class="mb-0">24/7 local assistance.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="text-primary">Our Projects</h6>
+                <h1 class="mb-4">Visit Our Latest Solar And Renewable Energy Projects</h1>
+            </div>
+            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline mb-5" id="portfolio-flters">
+                        <li class="mx-2 active" data-filter="*">All</li>
+                        <li class="mx-2" data-filter=".first">Solar Panels</li>
+                        <li class="mx-2" data-filter=".second">Wind Turbines</li>
+                        <li class="mx-2" data-filter=".third">Hydropower Plants</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-6.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <p class="text-primary mb-0">Solar Panels</p>
+                        <hr class="text-primary w-25 my-2">
+                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-5.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <p class="text-primary mb-0">Wind Turbines</p>
+                        <hr class="text-primary w-25 my-2">
+                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item third">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <p class="text-primary mb-0">Hydropower Plants</p>
+                        <hr class="text-primary w-25 my-2">
+                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-3.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <p class="text-primary mb-0">Solar Panels</p>
+                        <hr class="text-primary w-25 my-2">
+                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-2.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <p class="text-primary mb-0">Wind Turbines</p>
+                        <hr class="text-primary w-25 my-2">
+                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item third">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/img-600x400-1.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <p class="text-primary mb-0">Hydropower Plants</p>
+                        <hr class="text-primary w-25 my-2">
+                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projects End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <h6 class="text-primary">Get A Free Quote</h6>
+                        <h1 class="mb-4">Start Your Solar Journey Today!</h1>
+                        <p class="mb-4 pb-2">Ready to eliminate your EB bills? Fill out the form below for a Free Site Survey and a custom solar proposal. Our Tamil Nadu experts will analyze your roof and show you exactly how much you can save with government subsidies.</p>
+                       
+                        
+                      <form>
+
+  <!-- Property Type -->
+  <div class="btn-group w-100 mb-4" role="group">
+    <input type="radio" class="btn-check" name="property" id="res" checked>
+    <label class="btn btn-outline-primary rounded-pill" for="res">Residential</label>
+
+    <input type="radio" class="btn-check" name="property" id="soc">
+    <label class="btn btn-outline-primary rounded-pill" for="soc">Housing Society</label>
+
+    <input type="radio" class="btn-check" name="property" id="com">
+    <label class="btn btn-outline-primary rounded-pill" for="com">Commercial</label>
+  </div>
+
+  <!-- Full Name -->
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Full Name *</label>
+    <input type="text" class="form-control form-control-lg" required>
+  </div>
+
+  <!-- WhatsApp -->
+  <div class="mb-3">
+    <label class="form-label fw-semibold">WhatsApp number *</label>
+    <input type="tel" class="form-control form-control-lg" required>
+  </div>
+
+  <!-- Pin Code -->
+  <div class="mb-4">
+    <label class="form-label fw-semibold">Pin code *</label>
+    <input type="text" class="form-control form-control-lg" required>
+  </div>
+
+  <!-- Monthly Bill -->
+  <label class="form-label fw-semibold mb-2">
+    What is your average monthly bill?
+  </label>
+
+  <div class="row g-2 mb-4">
+    <div class="col-6">
+      <input type="radio" class="btn-check" name="bill" id="b1">
+      <label class="btn btn-outline-secondary w-100" for="b1">
+        Less than ₹1500
+      </label>
+    </div>
+
+    <div class="col-6">
+      <input type="radio" class="btn-check" name="bill" id="b2">
+      <label class="btn btn-outline-secondary w-100" for="b2">
+        ₹1500 – ₹2500
+      </label>
+    </div>
+
+    <div class="col-6">
+      <input type="radio" class="btn-check" name="bill" id="b3" checked>
+      <label class="btn btn-outline-primary w-100" for="b3">
+        ₹2500 – ₹4000
+      </label>
+    </div>
+
+    <div class="col-6">
+      <input type="radio" class="btn-check" name="bill" id="b4">
+      <label class="btn btn-outline-secondary w-100" for="b4">
+        ₹4000 – ₹8000
+      </label>
+    </div>
+
+    <div class="col-12">
+      <input type="radio" class="btn-check" name="bill" id="b5">
+      <label class="btn btn-outline-secondary w-100" for="b5">
+        More than ₹8000
+      </label>
+    </div>
+  </div>
+
+  <!-- Terms -->
+  <div class="form-check mb-4">
+    <input class="form-check-input" type="checkbox" required>
+    <label class="form-check-label small">
+      I agree to the terms of service & privacy policy
+    </label>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-semibold">
+    Submit Details
+  </button>
+
+</form>
+
+
+
+
+ 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+    <section style="padding: 60px 20px; background: #ffffff; font-family: sans-serif;">
+    <div style="max-width: 900px; margin: auto; border: 2px solid #ff6600; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: #333; font-size: 28px;">Estimate Your Solar Savings</h2>
+            <p style="color: #666;">Move the slider to match your monthly EB Bill (in Rupees)</p>
+        </div>
+
+        <div style="margin-bottom: 40px;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold; color: #ff6600; margin-bottom: 10px;">
+                <span>Monthly Bill: ₹<span id="bill-value">2000</span></span>
+            </div>
+            <input type="range" id="bill-range" min="1000" max="20000" step="500" value="2000" 
+                style="width: 100%; cursor: pointer; accent-color: #ff6600;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+            <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
+                <h4 style="margin: 0; color: #555; font-size: 14px;">Recommended System</h4>
+                <p style="font-size: 24px; font-weight: bold; color: #ff6600; margin: 10px 0;"><span id="system-size">2</span> kW</p>
+            </div>
+            <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
+                <h4 style="margin: 0; color: #555; font-size: 14px;">Monthly Savings</h4>
+                <p style="font-size: 24px; font-weight: bold; color: #ff6600; margin: 10px 0;">₹<span id="monthly-save">1800</span></p>
+            </div>
+            <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
+                <h4 style="margin: 0; color: #555; font-size: 14px;">25 Years Savings</h4>
+                <p style="font-size: 24px; font-weight: bold; color: #28a745; margin: 10px 0;">₹<span id="yearly-save">5.4</span> L</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="document.getElementById('solar-form').scrollIntoView();" 
+                style="background: #ff6600; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; cursor: pointer;">
+                Get Precise Quote for <span id="btn-kw">2</span>kW
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const range = document.getElementById('bill-range');
+    const billVal = document.getElementById('bill-value');
+    const systemSize = document.getElementById('system-size');
+    const monthlySave = document.getElementById('monthly-save');
+    const yearlySave = document.getElementById('yearly-save');
+    const btnKw = document.getElementById('btn-kw');
+
+    range.addEventListener('input', function() {
+        let bill = parseInt(this.value);
+        billVal.innerText = bill;
+
+        // Logic for TN Solar (Approximate)
+        let kw = Math.ceil(bill / 1000); 
+        if(kw < 1) kw = 1;
+        
+        let monthly = Math.round(bill * 0.9); // Assuming 90% savings
+        let total25Years = ((monthly * 12 * 25) / 100000).toFixed(1);
+
+        systemSize.innerText = kw;
+        btnKw.innerText = kw;
+        monthlySave.innerText = monthly;
+        yearlySave.innerText = total25Years;
+    });
+</script>
+
+
+
+
+
+<section style="padding: 80px 20px; background: #fdfdfd; font-family: 'Poppins', sans-serif;">
+    <div style="max-width: 1100px; margin: auto;">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h4 style="color: #ff6600; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">How it Works</h4>
+            <h2 style="font-size: 36px; color: #1a2e35;">Your Path to Energy Independence</h2>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+            
+            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">01</div>
+                <h5 style="font-weight: bold; color: #333;">Site Survey</h5>
+                <p style="color: #777; font-size: 14px;">We visit your location for a technical roof audit and shadow analysis.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">02</div>
+                <h5 style="font-weight: bold; color: #333;">Expert Design</h5>
+                <p style="color: #777; font-size: 14px;">Custom engineering of your solar structure for maximum TN wind resistance.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">03</div>
+                <h5 style="font-weight: bold; color: #333;">Quick Install</h5>
+                <p style="color: #777; font-size: 14px;">Professional installation using Tier-1 panels by our expert workers.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">04</div>
+                <h5 style="font-weight: bold; color: #333;">TANGEDCO Liason</h5>
+                <p style="color: #777; font-size: 14px;">We handle all government approvals and the Net-Metering process for you.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section style="padding: 80px 20px; background: #f0f9f1; font-family: 'Segoe UI', sans-serif;">
+    <div style="max-width: 1100px; margin: auto; text-align: center;">
+        
+        <div style="margin-bottom: 50px;">
+            <h4 style="color: #28a745; text-transform: uppercase; font-weight: bold; letter-spacing: 2px;">Our Green Footprint</h4>
+            <h2 style="font-size: 32px; color: #1a2e35;">Beyond Savings, We Protect Nature</h2>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+            
+            <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
+                <div style="font-size: 50px; margin-bottom: 15px;">🌳</div>
+                <h3 style="font-size: 36px; color: #333; margin: 10px 0;">150K+</h3>
+                <p style="color: #666; font-weight: 500;">Trees Planted Equivalent</p>
+                <p style="font-size: 13px; color: #999;">CO2 reduction from our 4234+ projects.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
+                <div style="font-size: 50px; margin-bottom: 15px;">🚗</div>
+                <h3 style="font-size: 36px; color: #333; margin: 10px 0;">12M</h3>
+                <p style="color: #666; font-weight: 500;">Miles Not Driven</p>
+                <p style="font-size: 13px; color: #999;">Reduction in carbon emissions across Tamil Nadu.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
+                <div style="font-size: 50px; margin-bottom: 15px;">☁️</div>
+                <h3 style="font-size: 36px; color: #333; margin: 10px 0;">85K</h3>
+                <p style="color: #666; font-weight: 500;">Tons of CO2 Saved</p>
+                <p style="font-size: 13px; color: #999;">Clean energy generated by our 1831+ specialists.</p>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 40px;">
+            <p style="font-style: italic; color: #555;">"Join our 3453+ Happy Customers in making Tamil Nadu greener!"</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Team Start -->
+    <!-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="text-primary">Team Member</h6>
+                <h1 class="mb-4">Experienced Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item rounded overflow-hidden">
+                        <div class="d-flex">
+                            <img class="img-fluid w-75" src="img/team-1.jpg" alt="">
+                            <div class="team-social w-25">
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5>Full Name</h5>
+                            <span>Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item rounded overflow-hidden">
+                        <div class="d-flex">
+                            <img class="img-fluid w-75" src="img/team-2.jpg" alt="">
+                            <div class="team-social w-25">
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5>Full Name</h5>
+                            <span>Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item rounded overflow-hidden">
+                        <div class="d-flex">
+                            <img class="img-fluid w-75" src="img/team-3.jpg" alt="">
+                            <div class="team-social w-25">
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5>Full Name</h5>
+                            <span>Designation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   --->
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+   <!-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="text-primary">Testimonial</h6>
+                <h1 class="mb-4">What Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-1.jpg">
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-2.jpg">
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-3.jpg">
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+    <!-- Testimonial End -->
+
+    <section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Our Work Gallery</h2>
+      <p class="text-muted">A glimpse of SOAR in action</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+.gallery-item {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+</style>
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center g-4">
+
+      <!-- Address Info -->
+      <div class="col-lg-5">
+        <h3 class="fw-bold mb-3">Our Location</h3>
+        <p class="text-muted mb-2">
+         232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, Tamil Nadu 600053
+        </p>
+        <p class="mb-1"><strong>Phone:</strong> +91 9876543210</p>
+        <p><strong>Email:</strong> info@soar.com</p>
+
+        <a href="https://www.google.com/maps/dir//Sustain+Solar+Power+232,+Ambattur+Red+Hills+Rd+Gangai+Nagar,+Kallikuppam,+Ambattur+Chennai,+Tamil+Nadu+600053/@13.1319372,80.1697976,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3a5263cbb44fcfdf:0x84ddba73eb70437e"
+           target="_blank"
+           class="btn btn-primary rounded-pill px-4 mt-3">
+          Get Directions
+        </a>
+      </div>
+
+     
+
+
+
+      <!-- Google Map -->
+      <div class="col-lg-7">
+        <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4824078519086!2d80.16722267330661!3d13.131942411346206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263cbb44fcfdf%3A0x84ddba73eb70437e!2sSustain%20Solar%20Power!5e0!3m2!1sen!2sin!4v1768389606846!5m2!1sen!2sin
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-5 bg-light" id="solar-calculator">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <div class="card shadow border-0 rounded-4 p-4">
+          <h3 class="fw-bold mb-2 text-center">Solar Savings Calculator</h3>
+          <p class="text-muted text-center mb-4">
+            Calculate how much you can save by switching to solar
+          </p>
+
+          <form onsubmit="event.preventDefault(); calculateSolar();">
+
+            <div class="row g-3">
+              <!-- Monthly Bill -->
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Monthly EB Bill (₹)</label>
+                <input type="number" id="bill" class="form-control form-control-lg"
+                       placeholder="Eg: 3500" required>
+              </div>
+
+              <!-- Location -->
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Location</label>
+                <select id="location" class="form-select form-select-lg">
+                  <option value="tamilnadu">Tamil Nadu</option>
+                  <option value="karnataka">Karnataka</option>
+                  <option value="kerala">Kerala</option>
+                </select>
+              </div>
+
+              <!-- Roof Size -->
+              <div class="col-12">
+                <label class="form-label fw-semibold">Available Roof Area (sq.ft)</label>
+                <input type="number" id="roof" class="form-control form-control-lg"
+                       placeholder="Eg: 800">
+              </div>
+            </div>
+
+            <button type="submit"
+              class="btn btn-primary w-100 rounded-pill py-3 fw-semibold mt-4">
+              Calculate Savings
+            </button>
+          </form>
+
+          <!-- Result -->
+          <div id="result" class="mt-4 d-none">
+            <hr>
+            <h5 class="fw-bold mb-3">Estimated Benefits</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>⚡ Recommended System: <strong><span id="system"></span> kW</strong></li>
+              <li>💰 Monthly Savings: <strong>₹<span id="monthly"></span></strong></li>
+              <li>📆 Yearly Savings: <strong>₹<span id="yearly"></span></strong></li>
+              <li>⏱ Payback Period: <strong><span id="payback"></span> years</strong></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<script>
+function calculateSolar(){
+  const bill = Number(document.getElementById("bill").value);
+  const roof = Number(document.getElementById("roof").value || 800);
+
+  // Rough solar estimation logic
+  const systemKW = Math.min(Math.ceil(bill / 1000), Math.floor(roof / 100));
+  const monthlySaving = Math.round(bill * 0.9);
+  const yearlySaving = monthlySaving * 12;
+  const systemCost = systemKW * 65000;
+  const payback = (systemCost / yearlySaving).toFixed(1);
+
+  document.getElementById("system").innerText = systemKW;
+  document.getElementById("monthly").innerText = monthlySaving;
+  document.getElementById("yearly").innerText = yearlySaving;
+  document.getElementById("payback").innerText = payback;
+
+  document.getElementById("result").classList.remove("d-none");
+}
+</script>
+
+
+
+<section class="py-5" id="installation-process">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Solar Installation Process</h2>
+      <p class="text-muted">From site visit to power generation – simple & transparent</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+          <div class="fs-1 mb-3">🏠</div>
+          <h5 class="fw-semibold">Site Inspection</h5>
+          <p class="text-muted small mb-0">
+            Free rooftop inspection & load analysis by our experts.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+          <div class="fs-1 mb-3">📐</div>
+          <h5 class="fw-semibold">System Design</h5>
+          <p class="text-muted small mb-0">
+            Custom solar system design based on your usage & roof.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+          <div class="fs-1 mb-3">🔧</div>
+          <h5 class="fw-semibold">Installation</h5>
+          <p class="text-muted small mb-0">
+            Professional installation using MNRE approved components.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+          <div class="fs-1 mb-3">⚡</div>
+          <h5 class="fw-semibold">Net Meter & Power On</h5>
+          <p class="text-muted small mb-0">
+            Net-metering approval & solar power generation starts.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<style>
+
+#installation-process .border:hover {
+  transform: translateY(-6px);
+  transition: .3s ease;
+}
+</style>
+
+<section class="py-5 bg-light" id="bill-comparison">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Before & After Installing Solar</h2>
+      <p class="text-muted">See how much our customers save every month</p>
+    </div>
+
+    <div class="row align-items-center g-4">
+
+      <!-- BEFORE -->
+      <div class="col-md-6">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body text-center">
+            <h5 class="fw-bold text-danger mb-3">Before Solar</h5>
+            <p class="display-6 fw-bold text-danger">₹4,500</p>
+            <p class="text-muted mb-0">Average monthly EB bill</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="col-md-6">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body text-center">
+            <h5 class="fw-bold text-success mb-3">After Solar</h5>
+            <p class="display-6 fw-bold text-success">₹350</p>
+            <p class="text-muted mb-0">Net EB bill after solar</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SAVINGS -->
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <div class="p-4 bg-white shadow rounded-4 d-inline-block">
+          <h5 class="fw-bold mb-1">You Save</h5>
+          <p class="display-6 fw-bold text-primary mb-0">₹4,150 / month</p>
+          <small class="text-muted">₹49,800 per year</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+#bill-comparison .card:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+
+</style>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, Tamil Nadu 600053</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9876 54320</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>  -->
+              
+                </div>
+              
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Sustain Solar Power</a>, All Right Reserved.
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

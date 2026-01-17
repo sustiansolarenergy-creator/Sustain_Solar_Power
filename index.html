@@ -1218,36 +1218,61 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
   </p>
 </div>
 
+<script>
+const range = document.getElementById('bill-range');
+const billVal = document.getElementById('bill-value');
+const systemSize = document.getElementById('system-size');
+const monthlySave = document.getElementById('monthly-save');
+const yearlySave = document.getElementById('yearly-save');
+const btnKw = document.getElementById('btn-kw');
 
-</section>
+range.addEventListener('input', function () {
+    let bill = parseInt(this.value);
+    billVal.innerText = bill;
+
+    // 🔌 UNIT CALCULATION
+    let units = bill <= 6000 
+        ? bill / 6               // ≤1000 units
+        : bill / 9.5;            // >1000 units
+
+    // ⚡ SYSTEM SIZE (1kW ≈ 120 units)
+    let kw = Math.ceil(units / 120);
+    if (kw < 1) kw = 1;
+
+    // 💰 SAVINGS (90%)
+    let monthly = Math.round(bill * 0.9);
+    let total25Years = ((monthly * 12 * 25) / 100000).toFixed(1);
+
+    systemSize.innerText = kw;
+    btnKw.innerText = kw;
+    monthlySave.innerText = monthly;
+    yearlySave.innerText = total25Years;
+});
+</script>
 <script>
 function showQuote(){
   let bill = parseInt(range.value);
-  let kw = Math.ceil(bill / 1000);
+
+  // 🔌 UNIT CALCULATION
+  let units = bill <= 6000 
+      ? bill / 6 
+      : bill / 9.5;
+
+  let kw = Math.ceil(units / 120);
   if(kw < 1) kw = 1;
 
-  // Approx TN solar pricing
   let costPerKW = 65000;
   let systemCost = kw * costPerKW;
 
-  // ✅ MNRE Residential Subsidy (correct slabs)
+  // MNRE subsidy
   let subsidy = 0;
-  if (kw <= 2) {
-    subsidy = kw * 30000;
-  } else if (kw === 3) {
-    subsidy = 78000;
-  } else {
-    subsidy = 78000; // max cap
-  }
+  if (kw <= 2) subsidy = kw * 30000;
+  else subsidy = 78000;
 
-  // Savings
   let monthlySaving = Math.round(bill * 0.9);
   let yearlySaving = monthlySaving * 12;
-
-  // Payback WITHOUT subsidy deduction
   let payback = (systemCost / yearlySaving).toFixed(1);
 
-  // UI update
   document.getElementById("q-kw").innerText = kw;
   document.getElementById("q-cost").innerText = systemCost.toLocaleString();
   document.getElementById("q-subsidy").innerText = subsidy.toLocaleString();
@@ -1258,32 +1283,6 @@ function showQuote(){
 }
 </script>
 
-
-<script>
-    const range = document.getElementById('bill-range');
-    const billVal = document.getElementById('bill-value');
-    const systemSize = document.getElementById('system-size');
-    const monthlySave = document.getElementById('monthly-save');
-    const yearlySave = document.getElementById('yearly-save');
-    const btnKw = document.getElementById('btn-kw');
-
-    range.addEventListener('input', function() {
-        let bill = parseInt(this.value);
-        billVal.innerText = bill;
-
-        // Logic for TN Solar (Approximate)
-        let kw = Math.ceil(bill / 1000); 
-        if(kw < 1) kw = 1;
-        
-        let monthly = Math.round(bill * 0.9); // Assuming 90% savings
-        let total25Years = ((monthly * 12 * 25) / 100000).toFixed(1);
-
-        systemSize.innerText = kw;
-        btnKw.innerText = kw;
-        monthlySave.innerText = monthly;
-        yearlySave.innerText = total25Years;
-    });
-</script>
 
 
 <!--

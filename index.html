@@ -556,7 +556,7 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
 
   // 🔥 REVERSE animation: 100 -> target
   function animateReverse(el, color, targetPct, textEl){
-    const duration = 1400; // ms
+    const duration = 4000; // ms
     const start = performance.now();
     const startPct = 100;
 
@@ -576,7 +576,7 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
 
   // Normal forward animation for saving
   function animateForward(el, color, targetPct, textEl){
-    const duration = 1400;
+    const duration = 4000;
     const start = performance.now();
 
     function frame(now){

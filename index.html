@@ -189,25 +189,81 @@ window.addEventListener("load", function () {
 
 
 
-    <div class="owl-carousel-item position-relative">
+   <div class="owl-carousel-item position-relative">
+
+    <div class="sun-glow-overlay"></div>
+
     <video autoplay muted loop playsinline class="video-bg">
-        <source src="img\mainvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <source src="img/mainvideo.mp4" type="video/mp4">
     </video>
-    
+
     <div class="owl-carousel-inner">
         <div class="container">
             <div class="row justify-content-start">
-
                 <div class="col-10 col-lg-8">
-                    <h1 class="display-2 text-white slideInDown">Still paying for electricity?</h1>
-                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Switch to solar. Let the sun pay your bills.</p>
-                  <!-- <a href="" class="btn btn-primary rounded-pill py-3 px-5 slideInLeft">Read More</a> -->
+                    <h1 class="display-2 text-white slideInDown">
+                        Still paying for electricity?
+                    </h1>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                        Switch to solar. Let the sun pay your bills.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
+
+<style>.owl-carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SUN GLOW WITH PULSE */
+.sun-glow-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top right,
+        rgba(255, 220, 120, 0.55),
+        rgba(255, 255, 255, 0.35),
+        rgba(255, 255, 255, 0.15)
+    );
+    animation: sunPulse 12s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* KEEP TEXT ABOVE */
+.owl-carousel-inner {
+    position: relative;
+    z-index: 2;
+}
+
+/* 🌞 PULSE KEYFRAMES */
+@keyframes sunPulse {
+    0% {
+       opacity: 0.35
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.55;
+        transform: scale(1.03);
+    }
+    100% {
+        opacity: 0.65
+        transform: scale(1);
+    }
+}
+
+
+
+</STYLE>
 
 
     <!-- Carousel Start -->

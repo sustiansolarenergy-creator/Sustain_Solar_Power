@@ -1147,47 +1147,47 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
 
 
     <section style="padding: 60px 20px; background: #ffffff; font-family: sans-serif;">
-    <div style="max-width: 900px; margin: auto; border: 2px solid #ff6600; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #333; font-size: 28px;">Estimate Your Solar Savings</h2>
-            <p style="color: #666;">Move the slider to match your monthly EB Bill (in Rupees)</p>
+        <div style="max-width: 900px; margin: auto; border: 2px solid #ff6600; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="color: #333; font-size: 28px;">Estimate Your Solar Savings</h2>
+                <p style="color: #666;">Move the slider to match your monthly EB Bill (in Rupees)</p>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <div style="display: flex; justify-content: space-between; font-weight: bold; color: #ff6600; margin-bottom: 10px;">
+                    <span>Monthly Bill: ₹<span id="bill-value">2000</span></span>
+                </div>
+                <input type="range" id="bill-range" min="1000" max="20000" step="500" value="2000"
+                       style="width: 100%; cursor: pointer; accent-color: #ff6600;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+                <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
+                    <h4 style="margin: 0; color: #555; font-size: 14px;">Recommended System</h4>
+                    <p style="font-size: 24px; font-weight: bold; color: #ff6600; margin: 10px 0;"><span id="system-size">2</span> kW</p>
+                </div>
+                <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
+                    <h4 style="margin: 0; color: #555; font-size: 14px;">Monthly Savings</h4>
+                    <p style="font-size: 24px; font-weight: bold; color: #ff6600; margin: 10px 0;">₹<span id="monthly-save">1800</span></p>
+                </div>
+                <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
+                    <h4 style="margin: 0; color: #555; font-size: 14px;">25 Years Savings</h4>
+                    <p style="font-size: 24px; font-weight: bold; color: #28a745; margin: 10px 0;">₹<span id="yearly-save">5.4</span> L</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="showQuote()"
+                        style="background: #ff6600; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; cursor: pointer;">
+                    Get Precise Quote for <span id="btn-kw">2</span>kW
+                </button>
+
+            </div>
         </div>
 
-        <div style="margin-bottom: 40px;">
-            <div style="display: flex; justify-content: space-between; font-weight: bold; color: #ff6600; margin-bottom: 10px;">
-                <span>Monthly Bill: ₹<span id="bill-value">2000</span></span>
-            </div>
-            <input type="range" id="bill-range" min="1000" max="20000" step="500" value="2000" 
-                style="width: 100%; cursor: pointer; accent-color: #ff6600;">
-        </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
-            <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
-                <h4 style="margin: 0; color: #555; font-size: 14px;">Recommended System</h4>
-                <p style="font-size: 24px; font-weight: bold; color: #ff6600; margin: 10px 0;"><span id="system-size">2</span> kW</p>
-            </div>
-            <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
-                <h4 style="margin: 0; color: #555; font-size: 14px;">Monthly Savings</h4>
-                <p style="font-size: 24px; font-weight: bold; color: #ff6600; margin: 10px 0;">₹<span id="monthly-save">1800</span></p>
-            </div>
-            <div style="background: #fff4ed; padding: 20px; border-radius: 15px;">
-                <h4 style="margin: 0; color: #555; font-size: 14px;">25 Years Savings</h4>
-                <p style="font-size: 24px; font-weight: bold; color: #28a745; margin: 10px 0;">₹<span id="yearly-save">5.4</span> L</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 30px;">
-            <button onclick="showQuote()" 
-  style="background: #ff6600; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; cursor: pointer;">
-  Get Precise Quote for <span id="btn-kw">2</span>kW
-</button>
-
-        </div>
-    </div>
-
-
-    <div id="quote-result" style="
+        <div id="quote-result" style="
   display:none;
   margin-top:30px;
   background:#f8f9fa;
@@ -1196,178 +1196,178 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
   text-align:center;
   border:1px dashed #ff6600;
 ">
-  <h3 style="margin-top:0;color:#333;">
-    <h3>Estimated Solar Cost & Subsidy Info</h3>
+            <h3 style="margin-top:0;color:#333;">
+                <h3>Estimated Solar Cost & Subsidy Info</h3>
 
 
-  </h3>
+            </h3>
 
-  <p style="margin:8px 0;">⚡ System Size: <strong><span id="q-kw"></span> kW</strong></p>
-  <p style="margin:8px 0;">💰 Approx System Cost: <strong>₹<span id="q-cost"></span></strong></p>
-  <p style="margin:8px 0;">🏷️ Govt Subsidy (est): <strong>₹<span id="q-subsidy"></span></strong></p>
-  <p style="font-size:12px;color:#777;">
-  *Govt subsidy is applicable only for eligible residential rooftop systems
-  as per MNRE guidelines.
-</p>
+            <p style="margin:8px 0;">⚡ System Size: <strong><span id="q-kw"></span> kW</strong></p>
+            <p style="margin:8px 0;">💰 Approx System Cost: <strong>₹<span id="q-cost"></span></strong></p>
+            <p style="margin:8px 0;">🏷️ Govt Subsidy (est): <strong>₹<span id="q-subsidy"></span></strong></p>
+            <p style="font-size:12px;color:#777;">
+                *Govt subsidy is applicable only for eligible residential rooftop systems
+                as per MNRE guidelines.
+            </p>
 
-  <p style="margin:8px 0;font-size:18px;">
-    ✅ Final Payable: <strong style="color:#28a745;">₹<span id="q-final"></span></strong>
-  </p>
-  <p style="margin-top:10px;color:#666;">
-    ⏱ Payback Period: <strong><span id="q-payback"></span> years</strong>
-  </p>
-</div>
-
-<script>
-const range = document.getElementById('bill-range');
-const billVal = document.getElementById('bill-value');
-const systemSize = document.getElementById('system-size');
-const monthlySave = document.getElementById('monthly-save');
-const yearlySave = document.getElementById('yearly-save');
-const btnKw = document.getElementById('btn-kw');
-
-range.addEventListener('input', function () {
-    let bill = parseInt(this.value);
-    billVal.innerText = bill;
-
-    // 🔌 UNIT CALCULATION
-    let units = bill <= 6000 
-        ? bill / 6               // ≤1000 units
-        : bill / 9.5;            // >1000 units
-
-    // ⚡ SYSTEM SIZE (1kW ≈ 120 units)
-    let kw = Math.ceil(units / 120);
-    if (kw < 1) kw = 1;
-
-    // 💰 SAVINGS (90%)
-    let monthly = Math.round(bill * 0.9);
-    let total25Years = ((monthly * 12 * 25) / 100000).toFixed(1);
-
-    systemSize.innerText = kw;
-    btnKw.innerText = kw;
-    monthlySave.innerText = monthly;
-    yearlySave.innerText = total25Years;
-});
-</script>
-<script>
-function showQuote(){
-  let bill = parseInt(range.value);
-
-  // 🔌 UNIT CALCULATION
-  let units = bill <= 6000 
-      ? bill / 6 
-      : bill / 9.5;
-
-  let kw = Math.ceil(units / 120);
-  if(kw < 1) kw = 1;
-
-  let costPerKW = 65000;
-  let systemCost = kw * costPerKW;
-
-  // MNRE subsidy
-  let subsidy = 0;
-  if (kw <= 2) subsidy = kw * 30000;
-  else subsidy = 78000;
-
-  let monthlySaving = Math.round(bill * 0.9);
-  let yearlySaving = monthlySaving * 12;
-  let payback = (systemCost / yearlySaving).toFixed(1);
-
-  document.getElementById("q-kw").innerText = kw;
-  document.getElementById("q-cost").innerText = systemCost.toLocaleString();
-  document.getElementById("q-subsidy").innerText = subsidy.toLocaleString();
-  document.getElementById("q-final").innerText = systemCost.toLocaleString();
-  document.getElementById("q-payback").innerText = payback;
-
-  document.getElementById("quote-result").style.display = "block";
-}
-</script>
-
-
-
-<!--
-
-
-<section style="padding: 80px 20px; background: #fdfdfd; font-family: 'Poppins', sans-serif;">
-    <div style="max-width: 1100px; margin: auto;">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h4 style="color: #ff6600; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">How it Works</h4>
-            <h2 style="font-size: 36px; color: #1a2e35;">Your Path to Energy Independence</h2>
+            <p style="margin:8px 0;font-size:18px;">
+                ✅ Final Payable: <strong style="color:#28a745;">₹<span id="q-final"></span></strong>
+            </p>
+            <p style="margin-top:10px;color:#666;">
+                ⏱ Payback Period: <strong><span id="q-payback"></span> years</strong>
+            </p>
         </div>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-            
-            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
-                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">01</div>
-                <h5 style="font-weight: bold; color: #333;">Site Survey</h5>
-                <p style="color: #777; font-size: 14px;">We visit your location for a technical roof audit and shadow analysis.</p>
+        <script>
+            const range = document.getElementById('bill-range');
+            const billVal = document.getElementById('bill-value');
+            const systemSize = document.getElementById('system-size');
+            const monthlySave = document.getElementById('monthly-save');
+            const yearlySave = document.getElementById('yearly-save');
+            const btnKw = document.getElementById('btn-kw');
+
+            range.addEventListener('input', function () {
+                let bill = parseInt(this.value);
+                billVal.innerText = bill;
+
+                // 🔌 UNIT CALCULATION
+                let units = bill <= 6000
+                    ? bill / 6               // ≤1000 units
+                    : bill / 9.5;            // >1000 units
+
+                // ⚡ SYSTEM SIZE (1kW ≈ 120 units)
+                let kw = Math.ceil(units / 120);
+                if (kw < 1) kw = 1;
+
+                // 💰 SAVINGS (90%)
+                let monthly = Math.round(bill * 0.9);
+                let total25Years = ((monthly * 12 * 25) / 100000).toFixed(1);
+
+                systemSize.innerText = kw;
+                btnKw.innerText = kw;
+                monthlySave.innerText = monthly;
+                yearlySave.innerText = total25Years;
+            });
+        </script>
+        <script>
+            function showQuote() {
+                let bill = parseInt(range.value);
+
+                // 🔌 UNIT CALCULATION
+                let units = bill <= 6000
+                    ? bill / 6
+                    : bill / 9.5;
+
+                let kw = Math.ceil(units / 120);
+                if (kw < 1) kw = 1;
+
+                let costPerKW = 65000;
+                let systemCost = kw * costPerKW;
+
+                // MNRE subsidy
+                let subsidy = 0;
+                if (kw <= 2) subsidy = kw * 30000;
+                else subsidy = 78000;
+
+                let monthlySaving = Math.round(bill * 0.9);
+                let yearlySaving = monthlySaving * 12;
+                let payback = (systemCost / yearlySaving).toFixed(1);
+
+                document.getElementById("q-kw").innerText = kw;
+                document.getElementById("q-cost").innerText = systemCost.toLocaleString();
+                document.getElementById("q-subsidy").innerText = subsidy.toLocaleString();
+                document.getElementById("q-final").innerText = systemCost.toLocaleString();
+                document.getElementById("q-payback").innerText = payback;
+
+                document.getElementById("quote-result").style.display = "block";
+            }
+        </script>
+
+
+
+        <!--
+
+
+    <section style="padding: 80px 20px; background: #fdfdfd; font-family: 'Poppins', sans-serif;">
+        <div style="max-width: 1100px; margin: auto;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h4 style="color: #ff6600; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">How it Works</h4>
+                <h2 style="font-size: 36px; color: #1a2e35;">Your Path to Energy Independence</h2>
             </div>
 
-            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
-                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">02</div>
-                <h5 style="font-weight: bold; color: #333;">Expert Design</h5>
-                <p style="color: #777; font-size: 14px;">Custom engineering of your solar structure for maximum TN wind resistance.</p>
-            </div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
 
-            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
-                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">03</div>
-                <h5 style="font-weight: bold; color: #333;">Quick Install</h5>
-                <p style="color: #777; font-size: 14px;">Professional installation using Tier-1 panels by our expert workers.</p>
-            </div>
+                <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">01</div>
+                    <h5 style="font-weight: bold; color: #333;">Site Survey</h5>
+                    <p style="color: #777; font-size: 14px;">We visit your location for a technical roof audit and shadow analysis.</p>
+                </div>
 
-            <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
-                <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">04</div>
-                <h5 style="font-weight: bold; color: #333;">TANGEDCO Liason</h5>
-                <p style="color: #777; font-size: 14px;">We handle all government approvals and the Net-Metering process for you.</p>
-            </div>
+                <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">02</div>
+                    <h5 style="font-weight: bold; color: #333;">Expert Design</h5>
+                    <p style="color: #777; font-size: 14px;">Custom engineering of your solar structure for maximum TN wind resistance.</p>
+                </div>
 
+                <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">03</div>
+                    <h5 style="font-weight: bold; color: #333;">Quick Install</h5>
+                    <p style="color: #777; font-size: 14px;">Professional installation using Tier-1 panels by our expert workers.</p>
+                </div>
+
+                <div style="flex: 1; min-width: 200px; text-align: center; padding: 20px;">
+                    <div style="width: 80px; height: 80px; background: #ff6600; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(255,102,0,0.3);">04</div>
+                    <h5 style="font-weight: bold; color: #333;">TANGEDCO Liason</h5>
+                    <p style="color: #777; font-size: 14px;">We handle all government approvals and the Net-Metering process for you.</p>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>-->
+    </section>-->
 
 
-<section style="padding: 80px 20px; background: #f0f9f1; font-family: 'Segoe UI', sans-serif;">
-    <div style="max-width: 1100px; margin: auto; text-align: center;">
-        
-        <div style="margin-bottom: 50px;">
-            <h4 style="color: #28a745; text-transform: uppercase; font-weight: bold; letter-spacing: 2px;">Our Green Footprint</h4>
-            <h2 style="font-size: 32px; color: #1a2e35;">Beyond Savings, We Protect Nature</h2>
-        </div>
+        <section style="padding: 80px 20px; background: #f0f9f1; font-family: 'Segoe UI', sans-serif;">
+            <div style="max-width: 1100px; margin: auto; text-align: center;">
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
-            
-            <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
-                <div style="font-size: 50px; margin-bottom: 15px;">🌳</div>
-                <h3 style="font-size: 36px; color: #333; margin: 10px 0;">150K+</h3>
-                <p style="color: #666; font-weight: 500;">Trees Planted Equivalent</p>
-                <p style="font-size: 13px; color: #999;">CO2 reduction from our 4234+ projects.</p>
+                <div style="margin-bottom: 50px;">
+                    <h4 style="color: #28a745; text-transform: uppercase; font-weight: bold; letter-spacing: 2px;">Our Green Footprint</h4>
+                    <h2 style="font-size: 32px; color: #1a2e35;">Beyond Savings, We Protect Nature</h2>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+
+                    <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
+                        <div style="font-size: 50px; margin-bottom: 15px;">🌳</div>
+                        <h3 style="font-size: 36px; color: #333; margin: 10px 0;">150K+</h3>
+                        <p style="color: #666; font-weight: 500;">Trees Planted Equivalent</p>
+                        <p style="font-size: 13px; color: #999;">CO2 reduction from our 4234+ projects.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
+                        <div style="font-size: 50px; margin-bottom: 15px;">🚗</div>
+                        <h3 style="font-size: 36px; color: #333; margin: 10px 0;">12M</h3>
+                        <p style="color: #666; font-weight: 500;">Miles Not Driven</p>
+                        <p style="font-size: 13px; color: #999;">Reduction in carbon emissions across Tamil Nadu.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
+                        <div style="font-size: 50px; margin-bottom: 15px;">☁️</div>
+                        <h3 style="font-size: 36px; color: #333; margin: 10px 0;">85K</h3>
+                        <p style="color: #666; font-weight: 500;">Tons of CO2 Saved</p>
+                        <p style="font-size: 13px; color: #999;">Clean energy generated by our 1831+ specialists.</p>
+                    </div>
+
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <p style="font-style: italic; color: #555;">"Join our 3453+ Happy Customers in making greener!"</p>
+                </div>
             </div>
-
-            <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
-                <div style="font-size: 50px; margin-bottom: 15px;">🚗</div>
-                <h3 style="font-size: 36px; color: #333; margin: 10px 0;">12M</h3>
-                <p style="color: #666; font-weight: 500;">Miles Not Driven</p>
-                <p style="font-size: 13px; color: #999;">Reduction in carbon emissions across Tamil Nadu.</p>
-            </div>
-
-            <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 5px solid #28a745;">
-                <div style="font-size: 50px; margin-bottom: 15px;">☁️</div>
-                <h3 style="font-size: 36px; color: #333; margin: 10px 0;">85K</h3>
-                <p style="color: #666; font-weight: 500;">Tons of CO2 Saved</p>
-                <p style="font-size: 13px; color: #999;">Clean energy generated by our 1831+ specialists.</p>
-            </div>
-
-        </div>
-
-        <div style="margin-top: 40px;">
-            <p style="font-style: italic; color: #555;">"Join our 3453+ Happy Customers in making greener!"</p>
-        </div>
-    </div>
-</section>  
+        </section>
 
 
-    <!-- Team Start -->
-    <!-- <div class="container-xxl py-5">
+        <!-- Team Start -->
+        <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h6 class="text-primary">Team Member</h6>
@@ -1425,11 +1425,9 @@ function showQuote(){
             </div>
         </div>
     </div>   --->
-    <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-   <!-- <div class="container-xxl py-5">
+        <!-- Team End -->
+        <!-- Testimonial Start -->
+        <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h6 class="text-primary">Testimonial</h6>
@@ -1478,318 +1476,382 @@ function showQuote(){
             </div>
         </div>
     </div>  -->
-    <!-- Testimonial End -->
-
-    <section class="py-5 bg-light">
-  <div class="container">
-
-    <div class="text-center mb-4">
-      <h2 class="fw-bold">Our Work Gallery</h2>
-      <p class="text-muted">A glimpse of Sustain Solar in action</p>
-    </div>
-
-    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-      
-      <!-- SLIDES -->
-      <div class="carousel-inner">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <div class="row g-3">
-            <div class="col-md-4">
-              <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
-            </div>
-            <div class="col-md-4">
-              <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
-            </div>
-            <div class="col-md-4">
-              <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="row g-3">
-            <div class="col-md-4">
-              <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
-            </div>
-            <div class="col-md-4">
-              <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
-            </div>
-            <div class="col-md-4">
-              <img src="img/img-600x400-1.jpg" class="img-fluid rounded" alt="">
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- CONTROLS -->
-      <button class="carousel-control-prev" type="button"
-        data-bs-target="#galleryCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-
-      <button class="carousel-control-next" type="button"
-        data-bs-target="#galleryCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-
-    </div>
-
-  </div>
-</section>
-
-<STYLE>
-.carousel img{
-  transition:transform .4s ease;
-}
-.carousel img:hover{
-  transform:scale(1.08);
-}
-
-
-</STYLE>
-
-
-
-
-
-
-<script>
-function calculateSolar(){
-  const bill = Number(document.getElementById("bill").value);
-  const roof = Number(document.getElementById("roof").value || 800);
-
-  // Rough solar estimation logic
-  const systemKW = Math.min(Math.ceil(bill / 1000), Math.floor(roof / 100));
-  const monthlySaving = Math.round(bill * 0.9);
-  const yearlySaving = monthlySaving * 12;
-  const systemCost = systemKW * 65000;
-  const payback = (systemCost / yearlySaving).toFixed(1);
-
-  document.getElementById("system").innerText = systemKW;
-  document.getElementById("monthly").innerText = monthlySaving;
-  document.getElementById("yearly").innerText = yearlySaving;
-  document.getElementById("payback").innerText = payback;
-
-  document.getElementById("result").classList.remove("d-none");
-}
-</script>
-
-
-
-<section class="py-5" id="installation-process">
-  <div class="container">
-
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Our Solar Installation Process</h2>
-      <p class="text-muted">From site visit to power generation – simple & transparent</p>
-    </div>
-
-    <div class="row g-4">
-
-      <div class="col-md-6 col-lg-3">
-        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
-          <div class="fs-1 mb-3">🏠</div>
-          <h5 class="fw-semibold">Site Inspection</h5>
-          <p class="text-muted small mb-0">
-            Free rooftop inspection & load analysis by our experts.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
-          <div class="fs-1 mb-3">📐</div>
-          <h5 class="fw-semibold">System Design</h5>
-          <p class="text-muted small mb-0">
-            Custom solar system design based on your usage & roof.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
-          <div class="fs-1 mb-3">🔧</div>
-          <h5 class="fw-semibold">Installation</h5>
-          <p class="text-muted small mb-0">
-            Professional installation using MNRE approved components.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
-          <div class="fs-1 mb-3">⚡</div>
-          <h5 class="fw-semibold">Net Meter & Power On</h5>
-          <p class="text-muted small mb-0">
-            Net-metering approval & solar power generation starts.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-
-
-<style>
-
-#installation-process .border:hover {
-  transform: translateY(-6px);
-  transition: .3s ease;
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-<section class="py-5 bg-light" id="warranty-amc">
-  <div class="container">
-
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Warranty, AMC & Service Guarantee</h2>
-      <p class="text-muted">
-        Complete peace of mind even after installation
-      </p>
-    </div>
-
-    <div class="row g-4 text-center">
-
-      <!-- Panel Warranty -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded-4 shadow h-100">
-          <div class="fs-1 mb-2">🛡️</div>
-          <h5 class="fw-semibold">Solar Panel Warranty</h5>
-          <p class="text-muted mb-0">
-            Performance warranty up to <strong>25 years</strong>
-          </p>
-        </div>
-      </div>
-
-      <!-- Inverter Warranty -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded-4 shadow h-100">
-          <div class="fs-1 mb-2">🔌</div>
-          <h5 class="fw-semibold">Inverter Warranty</h5>
-          <p class="text-muted mb-0">
-            Warranty coverage up to <strong>5–10 years</strong>
-          </p>
-        </div>
-      </div>
-
-      <!-- Service Guarantee -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded-4 shadow h-100">
-          <div class="fs-1 mb-2">🧑‍🔧</div>
-          <h5 class="fw-semibold">Service Guarantee</h5>
-          <p class="text-muted mb-0">
-            Complaint response within <strong>24–48 hours</strong>
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- AMC -->
-    <div class="row justify-content-center mt-5">
-      <div class="col-lg-8">
-        <div class="p-4 bg-white rounded-4 shadow text-center">
-          <h5 class="fw-bold mb-2">Annual Maintenance Contract (AMC)</h5>
-          <p class="mb-1">✔ Periodic panel cleaning</p>
-          <p class="mb-1">✔ System health check</p>
-          <p class="mb-1">✔ Performance monitoring</p>
-          <p class="fw-semibold text-primary mb-0">
-            Optional AMC plans available after free service period
-          </p>
-        </div>
-      </div>
-    </div>
-
-    
-
-  </div>
-</section>
-
-<p  ID="contactus"></p>
-    <br>
-
-<section id="contactus" class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center g-4">
-
-      <!-- Address Info -->
-      <div class="col-lg-5">
-        <h3 class="fw-bold mb-3">Our Location</h3>
-        <p class="text-muted mb-2">
-         232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, 600053
-        </p>
-        <p class="mb-1"><strong>Phone:</strong> +91 9876543210</p>
-        <p><strong>Email:</strong> info@suatainsolar.com</p>
-
-        <a href="https://www.google.com/maps/dir//Sustain+Solar+Power+232,+Ambattur+Red+Hills+Rd+Gangai+Nagar,+Kallikuppam,+Ambattur+Chennai,+Tamil+Nadu+600053/@13.1319372,80.1697976,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3a5263cbb44fcfdf:0x84ddba73eb70437e"
-           target="_blank"
-           class="btn btn-primary rounded-pill px-4 mt-3">
-          Get Directions
-        </a>
-      </div>
-
-     
-
-
-
-      <!-- Google Map -->
-      <div class="col-lg-7">
-        <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4824078519086!2d80.16722267330661!3d13.131942411346206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263cbb44fcfdf%3A0x84ddba73eb70437e!2sSustain%20Solar%20Power!5e0!3m2!1sen!2sin!4v1768389606846!5m2!1sen!2sin
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-<p  ID="EBBILL"></p>
-    <br>
-
-
-
-<section style="
+        <!-- Testimonial End -->
+
+        <style>
+            /* Gallery Styles */
+            .carousel img {
+                transition: transform .4s ease;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+                .carousel img:hover {
+                    transform: scale(1.08);
+                }
+
+            /* Prevent image overflow during zoom */
+            .gallery-col {
+                overflow: hidden;
+                border-radius: 8px;
+            }
+
+            /* Calculator Styling */
+            .calc-card {
+                background: #ffffff;
+                border-radius: 15px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+
+            /* Mobile adjustments for arrows */
+            @media (max-width: 768px) {
+                .carousel-control-prev, .carousel-control-next {
+                    filter: invert(100%); /* Makes arrows visible if background is light */
+                    width: 5%;
+                }
+            }
+        </style>
+        </head>
+        <body>
+
+            <section class="py-5 bg-light">
+                <div class="container">
+
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold">Our Work Gallery</h2>
+                        <p class="text-muted">A glimpse of Sustain Solar in action</p>
+                    </div>
+
+                    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-4 gallery-col">
+                                        <img src="img/img-600x400-1.jpg" class="img-fluid" alt="Solar 1">
+                                    </div>
+                                    <div class="col-md-4 d-none d-md-block gallery-col">
+                                        <img src="img/img-600x400-1.jpg" class="img-fluid" alt="Solar 2">
+                                    </div>
+                                    <div class="col-md-4 d-none d-md-block gallery-col">
+                                        <img src="img/img-600x400-1.jpg" class="img-fluid" alt="Solar 3">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-4 gallery-col">
+                                        <img src="img/img-600x400-1.jpg" class="img-fluid" alt="Solar 4">
+                                    </div>
+                                    <div class="col-md-4 d-none d-md-block gallery-col">
+                                        <img src="img/img-600x400-1.jpg" class="img-fluid" alt="Solar 5">
+                                    </div>
+                                    <div class="col-md-4 d-none d-md-block gallery-col">
+                                        <img src="img/img-600x400-1.jpg" class="img-fluid" alt="Solar 6">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 calc-card p-4">
+                            <h3 class="text-center mb-4">Solar Savings Calculator</h3>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Monthly Electricity Bill (₹)</label>
+                                    <input type="number" id="bill" class="form-control" placeholder="e.g. 2000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Roof Space (sq. ft)</label>
+                                    <input type="number" id="roof" class="form-control" placeholder="e.g. 500">
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button onclick="calculateSolar()" class="btn btn-primary px-5">Calculate</button>
+                                </div>
+                            </div>
+
+                            <div id="result" class="mt-4 d-none">
+                                <div class="row text-center border-top pt-3">
+                                    <div class="col-6 col-md-3">
+                                        <h6>System Size</h6>
+                                        <p class="fw-bold text-primary"><span id="system">0</span> kW</p>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <h6>Monthly Save</h6>
+                                        <p class="fw-bold text-success">₹<span id="monthly">0</span></p>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <h6>Yearly Save</h6>
+                                        <p class="fw-bold text-success">₹<span id="yearly">0</span></p>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <h6>Payback</h6>
+                                        <p class="fw-bold text-warning"><span id="payback">0</span> Years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+            <script>
+                function calculateSolar() {
+                    const bill = Number(document.getElementById("bill").value);
+                    const roof = Number(document.getElementById("roof").value || 800);
+
+                    if (bill <= 0) {
+                        alert("Please enter a valid bill amount machi!");
+                        return;
+                    }
+
+                    // Calculation logic
+                    const systemKW = Math.min(Math.ceil(bill / 1000), Math.floor(roof / 100));
+                    const monthlySaving = Math.round(bill * 0.9);
+                    const yearlySaving = monthlySaving * 12;
+                    const systemCost = systemKW * 65000;
+                    const payback = (systemCost / (yearlySaving || 1)).toFixed(1);
+
+                    // UI Update
+                    document.getElementById("system").innerText = systemKW;
+                    document.getElementById("monthly").innerText = monthlySaving;
+                    document.getElementById("yearly").innerText = yearlySaving;
+                    document.getElementById("payback").innerText = payback;
+
+                    document.getElementById("result").classList.remove("d-none");
+                }
+            </script>
+
+
+
+            <section class="py-5" id="installation-process">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Our Solar Installation Process</h2>
+                        <p class="text-muted">From site visit to power generation – simple & transparent</p>
+                    </div>
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+                                <div class="fs-1 mb-3">🏠</div>
+                                <h5 class="fw-semibold">Site Inspection</h5>
+                                <p class="text-muted small mb-0">
+                                    Free rooftop inspection & load analysis by our experts.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+                                <div class="fs-1 mb-3">📐</div>
+                                <h5 class="fw-semibold">System Design</h5>
+                                <p class="text-muted small mb-0">
+                                    Custom solar system design based on your usage & roof.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+                                <div class="fs-1 mb-3">🔧</div>
+                                <h5 class="fw-semibold">Installation</h5>
+                                <p class="text-muted small mb-0">
+                                    Professional installation using MNRE approved components.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 h-100 border rounded-4 shadow-sm">
+                                <div class="fs-1 mb-3">⚡</div>
+                                <h5 class="fw-semibold">Net Meter & Power On</h5>
+                                <p class="text-muted small mb-0">
+                                    Net-metering approval & solar power generation starts.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+            <style>
+
+                #installation-process .border:hover {
+                    transform: translateY(-6px);
+                    transition: .3s ease;
+                }
+            </style>
+
+
+
+
+
+
+
+
+
+
+
+            <section class="py-5 bg-light" id="warranty-amc">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Warranty, AMC & Service Guarantee</h2>
+                        <p class="text-muted">
+                            Complete peace of mind even after installation
+                        </p>
+                    </div>
+
+                    <div class="row g-4 text-center">
+
+                        <!-- Panel Warranty -->
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded-4 shadow h-100">
+                                <div class="fs-1 mb-2">🛡️</div>
+                                <h5 class="fw-semibold">Solar Panel Warranty</h5>
+                                <p class="text-muted mb-0">
+                                    Performance warranty up to <strong>25 years</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Inverter Warranty -->
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded-4 shadow h-100">
+                                <div class="fs-1 mb-2">🔌</div>
+                                <h5 class="fw-semibold">Inverter Warranty</h5>
+                                <p class="text-muted mb-0">
+                                    Warranty coverage up to <strong>5–10 years</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Service Guarantee -->
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded-4 shadow h-100">
+                                <div class="fs-1 mb-2">🧑‍🔧</div>
+                                <h5 class="fw-semibold">Service Guarantee</h5>
+                                <p class="text-muted mb-0">
+                                    Complaint response within <strong>24–48 hours</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- AMC -->
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-lg-8">
+                            <div class="p-4 bg-white rounded-4 shadow text-center">
+                                <h5 class="fw-bold mb-2">Annual Maintenance Contract (AMC)</h5>
+                                <p class="mb-1">✔ Periodic panel cleaning</p>
+                                <p class="mb-1">✔ System health check</p>
+                                <p class="mb-1">✔ Performance monitoring</p>
+                                <p class="fw-semibold text-primary mb-0">
+                                    Optional AMC plans available after free service period
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+
+            <p ID="contactus"></p>
+            <br>
+
+            <section id="contactus" class="py-5 bg-light">
+                <div class="container">
+                    <div class="row align-items-center g-4">
+
+                        <!-- Address Info -->
+                        <div class="col-lg-5">
+                            <h3 class="fw-bold mb-3">Our Location</h3>
+                            <p class="text-muted mb-2">
+                                232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, 600053
+                            </p>
+                            <p class="mb-1"><strong>Phone:</strong> +91 9876543210</p>
+                            <p><strong>Email:</strong> info@suatainsolar.com</p>
+
+                            <a href="https://www.google.com/maps/dir//Sustain+Solar+Power+232,+Ambattur+Red+Hills+Rd+Gangai+Nagar,+Kallikuppam,+Ambattur+Chennai,+Tamil+Nadu+600053/@13.1319372,80.1697976,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3a5263cbb44fcfdf:0x84ddba73eb70437e"
+                               target="_blank"
+                               class="btn btn-primary rounded-pill px-4 mt-3">
+                                Get Directions
+                            </a>
+                        </div>
+
+
+
+
+
+                        <!-- Google Map -->
+                        <div class="col-lg-7">
+                            <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4824078519086!2d80.16722267330661!3d13.131942411346206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263cbb44fcfdf%3A0x84ddba73eb70437e!2sSustain%20Solar%20Power!5e0!3m2!1sen!2sin!4v1768389606846!5m2!1sen!2sin
+                                        style="border:0;"
+                                        allowfullscreen
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <p ID="EBBILL"></p>
+            <br>
+
+
+
+            <section style="
 padding:50px;
 background:linear-gradient(135deg,#f8fbff,#eef4f8);
 font-family:'Segoe UI',Arial">
 
-<h2 style="
+                <h2 style="
 text-align:center;
 color:#c62828;
 font-size:32px;
 letter-spacing:1px;
 margin-bottom:30px">
-EB BILL CALCULATOR
-</h2>
+                    EB BILL CALCULATOR
+                </h2>
 
-<div style="
+                <div style="
 max-width:1000px;
 margin:auto;
 background:#ffffff;
@@ -1797,200 +1859,251 @@ padding:30px;
 border-radius:18px;
 box-shadow:0 10px 30px rgba(0,0,0,.12)">
 
-<!-- INPUT CARD -->
-<div style="
+                    <!-- INPUT CARD -->
+                    <div style="
 display:flex;
 justify-content:center;
 margin-bottom:30px">
 
-<div style="
+                        <div style="
 background:#f1f8ff;
 padding:20px 30px;
 border-radius:14px;
 border-left:6px solid #1e88e5">
 
-<label style="
+                            <label style="
 font-weight:600;
 color:#0d47a1;
 font-size:16px">
-Consumed Units
-</label><br><br>
+                                Consumed Units
+                            </label><br><br>
 
-<input type="number" id="units" value="2300"
-oninput="calcEB()"
-style="
+                            <input type="number" id="units" value="2300"
+                                   oninput="calcEB()"
+                                   style="
 padding:14px 16px;
 width:240px;
 font-size:18px;
 border-radius:10px;
 border:2px solid #1e88e5;
 outline:none">
-</div>
+                        </div>
 
-</div>
+                    </div>
 
-<!-- TABLE -->
-<div style="overflow-x:auto">
+                    <!-- TABLE -->
+                    <div style="overflow-x:auto">
 
-<table style="
+                        <table style="
 width:100%;
 border-collapse:separate;
 border-spacing:0;
 font-size:15px">
 
-<thead>
-<tr style="background:#1e88e5;color:#fff">
-<th style="padding:14px;border-radius:12px 0 0 0">From</th>
-<th>To</th>
-<th>Units</th>
-<th>Rate (₹)</th>
-<th style="border-radius:0 12px 0 0">Amount (₹)</th>
-</tr>
-</thead>
+                            <thead>
+                                <tr style="background:#1e88e5;color:#fff">
+                                    <th style="padding:14px;border-radius:12px 0 0 0">From</th>
+                                    <th>To</th>
+                                    <th>Units</th>
+                                    <th>Rate (₹)</th>
+                                    <th style="border-radius:0 12px 0 0">Amount (₹)</th>
+                                </tr>
+                            </thead>
 
-<tbody id="slabTable"></tbody>
+                            <tbody id="slabTable"></tbody>
 
-<tfoot>
-<tr style="
+                            <tfoot>
+                                <tr style="
 background:#2e7d32;
 color:#fff;
 font-weight:bold;
 font-size:17px">
-<td colspan="4" style="padding:16px">
-TOTAL EB AMOUNT
-</td>
-<td id="totalAmount">₹ 0</td>
-</tr>
-</tfoot>
+                                    <td colspan="4" style="padding:16px">
+                                        TOTAL EB AMOUNT
+                                    </td>
+                                    <td id="totalAmount">₹ 0</td>
+                                </tr>
+                            </tfoot>
 
-</table>
+                        </table>
 
-</div>
-
-</div>
-
-<script>
-function calcEB(){
-
-  const slabs = [
-    {from:1,to:100,rate:0,bg:"#f1f8e9"},
-    {from:101,to:400,rate:4.7,bg:"#e3f2fd"},
-    {from:401,to:500,rate:6.3,bg:"#fffde7"},
-    {from:501,to:600,rate:8.4,bg:"#fce4ec"},
-    {from:601,to:800,rate:9.45,bg:"#ede7f6"},
-    {from:801,to:1000,rate:10.5,bg:"#e0f2f1"},
-    {from:1001,to:Infinity,rate:11.55,bg:"#ffebee"}
-  ];
-
-  let units = parseInt(document.getElementById("units").value) || 0;
-  let remaining = units;
-  let total = 0;
-  let rows = "";
-
-  slabs.forEach(s=>{
-    if(remaining<=0) return;
-
-    let u = Math.min(
-      remaining,
-      s.to===Infinity?remaining:s.to-s.from+1
-    );
-
-    let amt = u * s.rate;
-    remaining -= u;
-    total += amt;
-
-    rows += `
-      <tr style="background:${s.bg}">
-        <td style="padding:12px">${s.from}</td>
-        <td>${s.to===Infinity?units:s.to}</td>
-        <td>${u}</td>
-        <td>${s.rate}</td>
-        <td>${amt.toFixed(2)}</td>
-      </tr>
-    `;
-  });
-
-  document.getElementById("slabTable").innerHTML = rows;
-  document.getElementById("totalAmount").innerText =
-    "₹ " + total.toLocaleString();
-}
-
-calcEB();
-</script>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Address</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, 600053</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9876 54320</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4824078519086!2d80.16722267330661!3d13.131942411346206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263cbb44fcfdf%3A0x84ddba73eb70437e!2sSustain%20Solar%20Power!5e0!3m2!1sen!2sin!4v1768389606846!5m2!1sen!2sin
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        
-
-    
-  </div>
-                </div>  
-              
-                </div>
-              
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Sustain Solar Power</a>, All Right Reserved.
                     </div>
-                   
+
+                </div>
+
+                <script>
+                    function calcEB() {
+
+                        const slabs = [
+                            { from: 1, to: 100, rate: 0, bg: "#f1f8e9" },
+                            { from: 101, to: 400, rate: 4.7, bg: "#e3f2fd" },
+                            { from: 401, to: 500, rate: 6.3, bg: "#fffde7" },
+                            { from: 501, to: 600, rate: 8.4, bg: "#fce4ec" },
+                            { from: 601, to: 800, rate: 9.45, bg: "#ede7f6" },
+                            { from: 801, to: 1000, rate: 10.5, bg: "#e0f2f1" },
+                            { from: 1001, to: Infinity, rate: 11.55, bg: "#ffebee" }
+                        ];
+
+                        let units = parseInt(document.getElementById("units").value) || 0;
+                        let remaining = units;
+                        let total = 0;
+                        let rows = "";
+
+                        slabs.forEach(s => {
+                            if (remaining <= 0) return;
+
+                            let u = Math.min(
+                                remaining,
+                                s.to === Infinity ? remaining : s.to - s.from + 1
+                            );
+
+                            let amt = u * s.rate;
+                            remaining -= u;
+                            total += amt;
+
+                            rows += `
+                                  <tr style="background:${s.bg}">
+                                    <td style="padding:12px">${s.from}</td>
+                                    <td>${s.to === Infinity ? units : s.to}</td>
+                                    <td>${u}</td>
+                                    <td>${s.rate}</td>
+                                    <td>${amt.toFixed(2)}</td>
+                                  </tr>
+                                `;
+                        });
+
+                        document.getElementById("slabTable").innerHTML = rows;
+                        document.getElementById("totalAmount").innerText =
+                            "₹ " + total.toLocaleString();
+                    }
+
+                    calcEB();
+                </script>
+
+            </section>
+
+
+
+
+            <!-- WhatsApp Floating Button with Wave -->
+            <a href="https://wa.me/918122563474" target="_blank" class="whatsapp-float">
+                <span class="wave"></span>
+                <span class="wave wave2"></span>
+                <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
+            </a>
+
+            <style>
+                .whatsapp-float {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    width: 70px;
+                    height: 70px;
+                    z-index: 999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                    .whatsapp-float img {
+                        width: 60px;
+                        height: 60px;
+                        z-index: 3;
+                    }
+
+                /* Wave effect */
+                .wave {
+                    position: absolute;
+                    width: 70px;
+                    height: 70px;
+                    background: #25D366;
+                    border-radius: 50%;
+                    animation: wave 2.5s infinite;
+                    opacity: 0.6;
+                }
+
+                .wave2 {
+                    animation-delay: 1.2s;
+                    opacity: 0.4;
+                }
+
+                @keyframes wave {
+                    0% {
+                        transform: scale(1);
+                        opacity: 0.6;
+                    }
+
+                    100% {
+                        transform: scale(2.4);
+                        opacity: 0;
+                    }
+                }
+            </style>
+
+
+
+
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="container py-5">
+                    <div class="row g-5">
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-white mb-4">Address</h5>
+                            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, 600053</p>
+                            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9876 54320</p>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4824078519086!2d80.16722267330661!3d13.131942411346206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263cbb44fcfdf%3A0x84ddba73eb70437e!2sSustain%20Solar%20Power!5e0!3m2!1sen!2sin!4v1768389606846!5m2!1sen!2sin
+                                    style="border:0;"
+                                    allowfullscreen
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a href="#">Sustain Solar Power</a>, All Right Reserved.
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+            </div>
+            <!-- Footer End -->
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="lib/wow/wow.min.js"></script>
+            <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/waypoints/waypoints.min.js"></script>
+            <script src="lib/counterup/counterup.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="lib/isotope/isotope.pkgd.min.js"></script>
+            <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
+            <!-- Template Javascript -->
+            <script src="js/main.js"></script>
+        </body>
 
 </html>

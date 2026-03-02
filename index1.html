@@ -34,120 +34,9 @@
 
 <body>
 
-    <!-- Spinner Start -->
-    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div> -->
-    <!-- Spinner End -->
-    <!-- Spinner Start -->
-    <div id="spinner"
-         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex flex-column align-items-center justify-content-center">
+    <div id="header-placeholder"></div>
 
-        <img src="img/logo.png" alt="Loading" class="loader-logo">
-
-    </div>
-    <style>
-        #spinner {
-            z-index: 9999;
-        }
-
-            #spinner .loader-logo {
-                width: 300px;
-                animation: spinPulse 4.6s ease-in-out infinite;
-            }
-
-            /* Text without extra HTML */
-            #spinner::after {
-                content: "Loading...";
-                margin-top: 12px;
-                font-size: 14px;
-                color: #6c757d;
-                letter-spacing: 1px;
-            }
-    </style>
-    <script>
-window.addEventListener("load", function () {
-  const spinner = document.getElementById("spinner");
-  spinner.classList.remove("show");
-  spinner.style.opacity = "0";
-  spinner.style.transition = "opacity .4s ease";
-
-  setTimeout(() => {
-    spinner.style.display = "none";
-  }, 400);
-});
-    </script>
-
-    <!-- Spinner End -->
-    <!-- Topbar Start -->
-    <!-- <div class="container-fluid bg-dark p-0">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>123 Street, New York, USA</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <small class="far fa-clock text-primary me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+012 345 6789</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Topbar End -->
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <!--  <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-             <h2 class="m-0 text-primary">SusTain Solar</h2> -->
-        </a>
-        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <img src="img\logo.png" alt="SusTain Solar Logo" style="max-height: 80px;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <!--<a href="project.html" class="nav-item nav-link">Project</a>-->
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <!--   <div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-    <div class="dropdown-menu bg-light m-0">
-        <a href="feature.html" class="dropdown-item">Feature</a>
-        <a href="quote.html" class="dropdown-item">Free Quote</a>
-        <a href="team.html" class="dropdown-item">Our Team</a>
-        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-        <a href="404.html" class="dropdown-item">404 Page</a>
-    </div>
-     </div> -->
-                <!--<a href="#FAQ1" class="nav-item nav-link">FAQ</a>
-    <a href="#contactus" class="nav-item nav-link">Contact</a>
-
-
-     <a href="#EBBILL" class="nav-item nav-link">EB Bill Calculator</a>-->
-
-
-            </div>
-            <a href="#solarFormm" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
+   
     <!-- Navbar End -->
 
 
@@ -405,24 +294,24 @@ window.addEventListener("load", function () {
                         </div>
 
                         <script>
-document.getElementById("solarForm").addEventListener("submit", function(e){
-  e.preventDefault();
+                            document.getElementById("solarForm").addEventListener("submit", function (e) {
+                                e.preventDefault();
 
-  const data = new FormData(this);
+                                const data = new FormData(this);
 
-  fetch("https://script.google.com/macros/s/AKfycbyKXTYmldUFuOPMHY76SY9mnLz46aWFLMndkNPUWZBirmz_3baUKXl7L0jsEni_3svbsA/exec", {
-    method: "POST",
-    body: data
-  })
-  .then(res => res.text())
-  .then(() => {
-    document.getElementById("successMsg").style.display = "block";
-    this.reset();
-  })
-  .catch(() => {
-    alert("Submission failed. Try again.");
-  });
-});
+                                fetch("https://script.google.com/macros/s/AKfycbyKXTYmldUFuOPMHY76SY9mnLz46aWFLMndkNPUWZBirmz_3baUKXl7L0jsEni_3svbsA/exec", {
+                                    method: "POST",
+                                    body: data
+                                })
+                                    .then(res => res.text())
+                                    .then(() => {
+                                        document.getElementById("successMsg").style.display = "block";
+                                        this.reset();
+                                    })
+                                    .catch(() => {
+                                        alert("Submission failed. Try again.");
+                                    });
+                            });
                         </script>
                     </div>
                 </div>
@@ -540,84 +429,84 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
     </style>
 
     <script>
-(function(){
-  const before = 4500;
-  const after  = 350;
+        (function () {
+            const before = 4500;
+            const after = 350;
 
-  const afterPctTarget = Math.round((after / before) * 100); // ~8%
-  const savePctTarget  = 100 - afterPctTarget;               // ~92%
+            const afterPctTarget = Math.round((after / before) * 100); // ~8%
+            const savePctTarget = 100 - afterPctTarget;               // ~92%
 
-  const monthlySaving = before - after;
-  const yearlySaving  = monthlySaving * 12;
+            const monthlySaving = before - after;
+            const yearlySaving = monthlySaving * 12;
 
-  const afterEl  = document.querySelector(".after-circle");
-  const saveEl   = document.querySelector(".saving-circle");
-  const afterTxt = document.getElementById("afterPercent");
-  const saveTxt  = document.getElementById("savePercent");
+            const afterEl = document.querySelector(".after-circle");
+            const saveEl = document.querySelector(".saving-circle");
+            const afterTxt = document.getElementById("afterPercent");
+            const saveTxt = document.getElementById("savePercent");
 
-  document.getElementById("monthlySave").innerText =
-    "₹" + monthlySaving.toLocaleString() + " / month saved";
-  document.getElementById("yearlySave").innerText =
-    "₹" + yearlySaving.toLocaleString() + " per year";
+            document.getElementById("monthlySave").innerText =
+                "₹" + monthlySaving.toLocaleString() + " / month saved";
+            document.getElementById("yearlySave").innerText =
+                "₹" + yearlySaving.toLocaleString() + " per year";
 
-  let animated = false;
+            let animated = false;
 
-  // 🔥 REVERSE animation: 100 -> target
-  function animateReverse(el, color, targetPct, textEl){
-    const duration = 4000; // ms
-    const start = performance.now();
-    const startPct = 100;
+            // 🔥 REVERSE animation: 100 -> target
+            function animateReverse(el, color, targetPct, textEl) {
+                const duration = 4000; // ms
+                const start = performance.now();
+                const startPct = 100;
 
-    function frame(now){
-      const progress = Math.min((now - start) / duration, 1);
-      const pct = Math.round(startPct - (progress * (startPct - targetPct)));
-      const deg = (pct / 100) * 360;
+                function frame(now) {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const pct = Math.round(startPct - (progress * (startPct - targetPct)));
+                    const deg = (pct / 100) * 360;
 
-      el.style.background =
-        `conic-gradient(${color} 0deg ${deg}deg, #e9ecef ${deg}deg 360deg)`;
-      textEl.innerText = pct + "%";
+                    el.style.background =
+                        `conic-gradient(${color} 0deg ${deg}deg, #e9ecef ${deg}deg 360deg)`;
+                    textEl.innerText = pct + "%";
 
-      if (progress < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
+                    if (progress < 1) requestAnimationFrame(frame);
+                }
+                requestAnimationFrame(frame);
+            }
 
-  // Normal forward animation for saving
-  function animateForward(el, color, targetPct, textEl){
-    const duration = 4000;
-    const start = performance.now();
+            // Normal forward animation for saving
+            function animateForward(el, color, targetPct, textEl) {
+                const duration = 4000;
+                const start = performance.now();
 
-    function frame(now){
-      const progress = Math.min((now - start) / duration, 1);
-      const pct = Math.round(progress * targetPct);
-      const deg = (pct / 100) * 360;
+                function frame(now) {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const pct = Math.round(progress * targetPct);
+                    const deg = (pct / 100) * 360;
 
-      el.style.background =
-        `conic-gradient(${color} 0deg ${deg}deg, #e9ecef ${deg}deg 360deg)`;
-      textEl.innerText = pct + "%";
+                    el.style.background =
+                        `conic-gradient(${color} 0deg ${deg}deg, #e9ecef ${deg}deg 360deg)`;
+                    textEl.innerText = pct + "%";
 
-      if (progress < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
+                    if (progress < 1) requestAnimationFrame(frame);
+                }
+                requestAnimationFrame(frame);
+            }
 
-  // Trigger when visible
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting && !animated){
-        animated = true;
+            // Trigger when visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting && !animated) {
+                        animated = true;
 
-        // 🔴 AFTER: 100% ➜ 8%
-        animateReverse(afterEl, "#dc3545", afterPctTarget, afterTxt);
+                        // 🔴 AFTER: 100% ➜ 8%
+                        animateReverse(afterEl, "#dc3545", afterPctTarget, afterTxt);
 
-        // 🟢 SAVING: 0% ➜ 92%
-        animateForward(saveEl, "#28a745", savePctTarget, saveTxt);
-      }
-    });
-  }, { threshold: 0.4 });
+                        // 🟢 SAVING: 0% ➜ 92%
+                        animateForward(saveEl, "#28a745", savePctTarget, saveTxt);
+                    }
+                });
+            }, { threshold: 0.4 });
 
-  observer.observe(document.getElementById("bill-comparison"));
-})();
+            observer.observe(document.getElementById("bill-comparison"));
+        })();
     </script>
 
 
@@ -629,7 +518,7 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
 
 
     <!-- Feature Start -->
-    <!--<div class="container-xxl py-5">
+    <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
@@ -674,10 +563,10 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
     <!-- Feature Start -->
     <!-- About Start -->
-    <!--<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
@@ -698,13 +587,10 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
     <!-- About End -->
-
-
-
     <!-- Service Start -->
-    <!--  <div class="container-xxl py-5">
+    <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h6 class="text-primary">Our Specialized Solar Services</h6>
@@ -791,7 +677,7 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Service End -->
 
     <p ID="FAQ1"></p>
@@ -871,38 +757,38 @@ document.getElementById("solarForm").addEventListener("submit", function(e){
     </section>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const acc = document.getElementsByClassName("solar-accordion");
+        document.addEventListener("DOMContentLoaded", function () {
+            const acc = document.getElementsByClassName("solar-accordion");
 
-        for (let i = 0; i < acc.length; i++) {
-            acc[i].onclick = function() {
-                // Toggle between adding and removing the "active" class
-                this.classList.toggle("active");
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].onclick = function () {
+                    // Toggle between adding and removing the "active" class
+                    this.classList.toggle("active");
 
-                const panel = this.nextElementSibling;
-                const icon = this.querySelector(".icon");
+                    const panel = this.nextElementSibling;
+                    const icon = this.querySelector(".icon");
 
-                if (panel.style.maxHeight && panel.style.maxHeight !== "0px") {
-                    // It's open, so close it
-                    panel.style.maxHeight = "0px";
-                    icon.innerHTML = "+";
-                    this.style.color = "#333";
-                } else {
-                    // It's closed, so open it
-                    // Close all other panels first (Optional - for a cleaner look)
-                    for (let j = 0; j < acc.length; j++) {
-                        acc[j].nextElementSibling.style.maxHeight = "0px";
-                        acc[j].querySelector(".icon").innerHTML = "+";
-                        acc[j].style.color = "#333";
+                    if (panel.style.maxHeight && panel.style.maxHeight !== "0px") {
+                        // It's open, so close it
+                        panel.style.maxHeight = "0px";
+                        icon.innerHTML = "+";
+                        this.style.color = "#333";
+                    } else {
+                        // It's closed, so open it
+                        // Close all other panels first (Optional - for a cleaner look)
+                        for (let j = 0; j < acc.length; j++) {
+                            acc[j].nextElementSibling.style.maxHeight = "0px";
+                            acc[j].querySelector(".icon").innerHTML = "+";
+                            acc[j].style.color = "#333";
+                        }
+
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        icon.innerHTML = "−";
+                        this.style.color = "#ff6600";
                     }
-
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                    icon.innerHTML = "−";
-                    this.style.color = "#ff6600";
-                }
-            };
-        }
-    });
+                };
+            }
+        });
     </script>
 
 
@@ -1970,14 +1856,14 @@ font-size:17px">
                             total += amt;
 
                             rows += `
-                                  <tr style="background:${s.bg}">
-                                    <td style="padding:12px">${s.from}</td>
-                                    <td>${s.to === Infinity ? units : s.to}</td>
-                                    <td>${u}</td>
-                                    <td>${s.rate}</td>
-                                    <td>${amt.toFixed(2)}</td>
-                                  </tr>
-                                `;
+                                                                  <tr style="background:${s.bg}">
+                                                                    <td style="padding:12px">${s.from}</td>
+                                                                    <td>${s.to === Infinity ? units : s.to}</td>
+                                                                    <td>${u}</td>
+                                                                    <td>${s.rate}</td>
+                                                                    <td>${amt.toFixed(2)}</td>
+                                                                  </tr>
+                                                                `;
                         });
 
                         document.getElementById("slabTable").innerHTML = rows;
@@ -2050,54 +1936,11 @@ font-size:17px">
 
 
 
+            <div id="footer-placeholder"></div>
+
+            <script src="script.js"></script>
 
 
-
-            <!-- Footer Start -->
-            <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-                <div class="container py-5">
-                    <div class="row g-5">
-                        <div class="col-lg-4 col-md-6">
-                            <h5 class="text-white mb-4">Address</h5>
-                            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, 600053</p>
-                            <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91 9876 54320</p>
-                            <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                            <div class="d-flex pt-2">
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-8 col-md-6">
-                            <h5 class="text-white mb-4">Find Us</h5>
-                            <div class="position-relative w-100" style="height: 200px;">
-                                <iframe class="position-relative rounded w-100 h-100"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.645062145535!2d80.1706821!3d13.1216973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263ec81387d37%3A0x65135111d4e68e40!2s232%2C%20Ambattur%20Red%20Hills%20Rd%2C%20Kallikuppam%2C%20Ambattur%2C%20Chennai%2C%20Tamil%20Nadu%20600053!5e0!3m2!1sen!2sin!4v1700000000000"
-                                        frameborder="0" style="min-height: 200px; border:0;" allowfullscreen="" aria-hidden="false"
-                                        tabindex="0"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a href="#">Sustain Solar Power</a>, All Right Reserved.
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer End -->
             <!-- Back to Top -->
             <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 

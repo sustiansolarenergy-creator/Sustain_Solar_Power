@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Solartec - Renewable Energy Website Template</title>
+    <title>Sustain Solar Power</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,16 +34,45 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <div id="spinner"
+         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex flex-column align-items-center justify-content-center">
+
+        <img src="img/logo.png" alt="Loading" class="loader-logo">
+
     </div>
+    <style>
+        #spinner {
+            z-index: 9999;
+        }
+
+            #spinner .loader-logo {
+                width: 300px;
+                animation: spinPulse 4.6s ease-in-out infinite;
+            }
+
+            /* Text without extra HTML */
+            #spinner::after {
+                content: "Loading...";
+                margin-top: 12px;
+                font-size: 14px;
+                color: #6c757d;
+                letter-spacing: 1px;
+            }
+    </style>
+    <script>window.addEventListener("load", function () {
+        const spinner = document.getElementById("spinner");
+        spinner.classList.remove("show");
+        spinner.style.opacity = "0";
+        spinner.style.transition = "opacity .4s ease";
+
+        setTimeout(() => {
+            spinner.style.display = "none";
+        }, 400);
+    });</script>
+
     <!-- Spinner End -->
-
-
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark p-0">
+    <!-- <div class="container-fluid bg-dark p-0">
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
@@ -68,346 +97,450 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Topbar End -->
-
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <!--  <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+             <h2 class="m-0 text-primary">SusTain Solar</h2> -->
+        </a>
         <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <h2 class="m-0 text-primary">Solartec</h2>
+            <img src="img\logo.png" alt="SusTain Solar Logo" style="max-height: 80px;">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link active">Service</a>
-                <a href="project.html" class="nav-item nav-link">Project</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu bg-light m-0">
-                        <a href="feature.html" class="dropdown-item">Feature</a>
-                        <a href="quote.html" class="dropdown-item">Free Quote</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
+                <a href="service.html" class="nav-item nav-link">Service</a>
+                <!--<a href="project.html" class="nav-item nav-link">Project</a>-->
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <!--<div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+        <div class="dropdown-menu bg-light m-0">
+            <a href="feature.html" class="dropdown-item">Feature</a>
+            <a href="quote.html" class="dropdown-item">Free Quote</a>
+            <a href="team.html" class="dropdown-item">Our Team</a>
+            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+            <a href="404.html" class="dropdown-item">404 Page</a>
+        </div>
+    </div>-->
+                <!--<a href="#FAQ1" class="nav-item nav-link">FAQ</a>
+    <a href="#contactus" class="nav-item nav-link">Contact</a>
+
+
+    <a href="#EBBILL" class="nav-item nav-link">EB Bill Calculator</a>-->
+
+
             </div>
-            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="#solarFormm" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
-
-
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5">
         <div class="container py-5">
             <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
+            <!--<nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
                     <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
                     <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
                 </ol>
-            </nav>
+            </nav>-->
         </div>
     </div>
     <!-- Page Header End -->
-
-
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-6 bg-light">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="text-primary">Our Services</h6>
-                <h1 class="mb-4">We Are Pioneers In The World Of Renewable Energy</h1>
+                <h6 class="text-primary text-uppercase fw-bold" style="letter-spacing: 3px;">Our Expertise</h6>
+                <h1 class="display-5 mb-4">Precision Solar Solutions for Every Need</h1>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-1.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-solar-panel fa-3x"></i>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card position-relative overflow-hidden h-100 shadow-sm bg-white rounded-4">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid transition-img" src="img/img-600x400-1.jpg" alt="Residential Solar">
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="service-badge bg-primary text-white rounded-circle shadow">
+                                <i class="fa fa-home fa-2x"></i>
                             </div>
-                            <h4 class="mb-3">Solar Panels</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <h4 class="mt-5 mb-3">Residential On-Grid</h4>
+                            <p class="text-muted">Slash your EB bills by up to 90% with our smart Net-Metering rooftop solutions.</p>
+                            <hr class="w-25 mx-auto border-primary border-2">
+                            <a href="" class="btn btn-link text-primary fw-bold text-uppercase">Learn More <i class="fa fa-chevron-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-2.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-wind fa-3x"></i>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card position-relative overflow-hidden h-100 shadow-sm bg-white rounded-4">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid transition-img" src="img/img-600x400-6.jpg" alt="Industrial Solar">
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="service-badge bg-primary text-white rounded-circle shadow">
+                                <i class="fa fa-industry fa-2x"></i>
                             </div>
-                            <h4 class="mb-3">Wind Turbines</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <h4 class="mt-5 mb-3">Industrial Solar</h4>
+                            <p class="text-muted">Heavy-duty power for factories in Chennai & Coimbatore with massive tax benefits.</p>
+                            <hr class="w-25 mx-auto border-primary border-2">
+                            <a href="" class="btn btn-link text-primary fw-bold text-uppercase">Tax Benefits <i class="fa fa-chevron-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-3.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-lightbulb fa-3x"></i>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-card position-relative overflow-hidden h-100 shadow-sm bg-white rounded-4">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid transition-img" src="img/img-600x400-3.jpg" alt="Battery Systems">
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="service-badge bg-primary text-white rounded-circle shadow">
+                                <i class="fa fa-battery-full fa-2x"></i>
                             </div>
-                            <h4 class="mb-3">Hydropower Plants</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <h4 class="mt-5 mb-3">Off-Grid Storage</h4>
+                            <p class="text-muted">Independent battery systems for farmhouses and areas with frequent power cuts.</p>
+                            <hr class="w-25 mx-auto border-primary border-2">
+                            <a href="" class="btn btn-link text-primary fw-bold text-uppercase">24/7 Power <i class="fa fa-chevron-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-solar-panel fa-3x"></i>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card position-relative overflow-hidden h-100 shadow-sm bg-white rounded-4">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid transition-img" src="img/img-600x400-4.jpg" alt="Solar Pumps">
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="service-badge bg-primary text-white rounded-circle shadow">
+                                <i class="fa fa-tint fa-2x"></i>
                             </div>
-                            <h4 class="mb-3">Solar Panels</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <h4 class="mt-5 mb-3">Agricultural Pumps</h4>
+                            <p class="text-muted">Zero fuel cost irrigation. High-efficiency pumps designed for Tamil Nadu farmers.</p>
+                            <hr class="w-25 mx-auto border-primary border-2">
+                            <a href="" class="btn btn-link text-primary fw-bold text-uppercase">Save Fuel <i class="fa fa-chevron-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-5.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-wind fa-3x"></i>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card position-relative overflow-hidden h-100 shadow-sm bg-white rounded-4">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid transition-img" src="img/img-600x400-5.jpg" alt="Maintenance">
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="service-badge bg-primary text-white rounded-circle shadow">
+                                <i class="fa fa-tools fa-2x"></i>
                             </div>
-                            <h4 class="mb-3">Wind Turbines</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <h4 class="mt-5 mb-3">Solar AMC</h4>
+                            <p class="text-muted">Expert cleaning and maintenance to keep your panels at peak efficiency.</p>
+                            <hr class="w-25 mx-auto border-primary border-2">
+                            <a href="" class="btn btn-link text-primary fw-bold text-uppercase">Peak Power <i class="fa fa-chevron-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-6.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-lightbulb fa-3x"></i>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-card position-relative overflow-hidden h-100 shadow-sm bg-white rounded-4">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid transition-img" src="img/img-600x400-6.jpg" alt="Subsidy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="service-badge bg-primary text-white rounded-circle shadow">
+                                <i class="fa fa-hand-holding-usd fa-2x"></i>
                             </div>
-                            <h4 class="mb-3">Hydropower Plants</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <h4 class="mt-5 mb-3">Subsidy Liaison</h4>
+                            <p class="text-muted">Hassle-free PM Surya Ghar & TANGEDCO subsidy processing by our experts.</p>
+                            <hr class="w-25 mx-auto border-primary border-2">
+                            <a href="" class="btn btn-link text-primary fw-bold text-uppercase">Get Subsidy <i class="fa fa-chevron-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+            }
+
+        .service-badge {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 35%; /* Adjust based on image height */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid #fff;
+            z-index: 2;
+        }
+
+        .transition-img {
+            transition: transform 0.6s ease;
+            min-height: 250px;
+            object-fit: cover;
+        }
+
+        .service-card:hover .transition-img {
+            transform: scale(1.1);
+        }
+
+        .btn-link {
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+    </style>
     <!-- Service End -->
-
-
     <!-- Feature Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container feature px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="p-lg-5 ps-lg-0">
-                        <h6 class="text-primary">Why Choose Us!</h6>
-                        <h1 class="mb-4">Complete Commercial & Residential Solar Systems</h1>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-check text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Quality</p>
-                                        <h5 class="mb-0">Services</h5>
-                                    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-4 shadow-lg" src="img/feature.jpg" alt="Solar Technology" style="border-bottom: 8px solid #32c36c;">
+
+                        <div class="position-absolute top-0 start-0 translate-middle bg-white shadow-lg p-3 rounded-circle d-none d-md-block" style="width: 120px; height: 120px; z-index: 2;">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100 text-center">
+                                <h3 class="text-primary mb-0">25</h3>
+                                <small class="fw-bold text-dark">Years<br>Warranty</small>
+                            </div>
+                        </div>
+
+                        <div class="position-absolute bottom-0 end-0 p-4 bg-primary text-white rounded-4 shadow-lg m-4 d-none d-sm-block">
+                            <div class="d-flex align-items-center">
+                                <h1 class="display-4 text-white mb-0 me-3">0%</h1>
+                                <p class="mb-0 fw-bold">Maintenance<br>Hassle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    <h6 class="text-primary text-uppercase fw-bold mb-3" style="letter-spacing: 3px;">The Sustain Edge</h6>
+                    <h1 class="display-6 mb-4">Why Smart Property Owners <span class="text-primary underline">Choose Us</span></h1>
+                    <p class="mb-5 text-muted">We don't just sell equipment; we deliver energy independence. Our systems are engineered specifically for the high-temperature climate of Tamil Nadu, ensuring your panels perform when you need them most.</p>
+
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center p-3 rounded-3 bg-light border-bottom border-primary border-3 transition-hover">
+                                <div class="btn-square bg-white rounded-circle shadow-sm" style="width: 60px; height: 60px;">
+                                    <i class="fa fa-gem text-primary fa-lg"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Premium Tier-1</h6>
+                                    <p class="small mb-0 text-muted">A-Grade Components</p>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-user-check text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Expert</p>
-                                        <h5 class="mb-0">Workers</h5>
-                                    </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center p-3 rounded-3 bg-light border-bottom border-primary border-3 transition-hover">
+                                <div class="btn-square bg-white rounded-circle shadow-sm" style="width: 60px; height: 60px;">
+                                    <i class="fa fa-bolt text-primary fa-lg"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Fast Install</h6>
+                                    <p class="small mb-0 text-muted">Ready in 7 Days</p>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-drafting-compass text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Free</p>
-                                        <h5 class="mb-0">Consultation</h5>
-                                    </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center p-3 rounded-3 bg-light border-bottom border-primary border-3 transition-hover">
+                                <div class="btn-square bg-white rounded-circle shadow-sm" style="width: 60px; height: 60px;">
+                                    <i class="fa fa-hand-holding-usd text-primary fa-lg"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">High ROI</h6>
+                                    <p class="small mb-0 text-muted">Payback in 4 Years</p>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-headphones text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Customer</p>
-                                        <h5 class="mb-0">Support</h5>
-                                    </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center p-3 rounded-3 bg-light border-bottom border-primary border-3 transition-hover">
+                                <div class="btn-square bg-white rounded-circle shadow-sm" style="width: 60px; height: 60px;">
+                                    <i class="fa fa-tools text-primary fa-lg"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Life Support</h6>
+                                    <p class="small mb-0 text-muted">Dedicated AMC</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+
+    <style>
+        .transition-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+            .transition-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+                background-color: #ffffff !important;
+            }
+
+        .underline {
+            border-bottom: 3px solid #32c36c;
+            padding-bottom: 2px;
+        }
+    </style>
     <!-- Feature End -->
-
-
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="text-primary">Testimonial</h6>
-                <h1 class="mb-4">What Our Clients Say!</h1>
+                <h6 class="text-primary text-uppercase fw-bold" style="letter-spacing: 2px;">Voice of Customers</h6>
+                <h1 class="mb-4">Trusted by 500+ Happy Property Owners</h1>
             </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-1.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
+                <div class="testimonial-item bg-light rounded-4 p-4 p-lg-5 ml-2 mr-2 shadow-sm border-top border-primary border-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="ps-3">
+                            <h5 class="mb-1">Rajesh Kumar</h5>
+                            <small class="text-primary fw-bold">Residential Owner, Chennai</small>
                         </div>
                     </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
+                    <div class="mb-3">
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
                     </div>
+                    <p class="fs-6 mb-0">"The best decision I made for my home. My monthly EB bill dropped from ₹4,500 to almost zero! The installation team was professional and finished the entire setup in just 3 days."</p>
                 </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-2.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
+
+                <div class="testimonial-item bg-light rounded-4 p-4 p-lg-5 ml-2 mr-2 shadow-sm border-top border-primary border-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="ps-3">
+                            <h5 class="mb-1">Suresh Menon</h5>
+                            <small class="text-primary fw-bold">Factory Manager, Madurai</small>
                         </div>
                     </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
+                    <div class="mb-3">
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
                     </div>
+                    <p class="fs-6 mb-0">"We installed a 50kW system for our unit. Sustain Solar Power handled all the government subsidy paperwork perfectly. Their post-installation service is truly commendable."</p>
                 </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-3.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
+
+                <div class="testimonial-item bg-light rounded-4 p-4 p-lg-5 ml-2 mr-2 shadow-sm border-top border-primary border-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="ps-3">
+                            <h5 class="mb-1">Anitha Lakshmi</h5>
+                            <small class="text-primary fw-bold">Villa Owner, Coimbatore</small>
                         </div>
                     </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
+                    <div class="mb-3">
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
+                        <i class="fa fa-star text-warning small"></i>
                     </div>
+                    <p class="fs-6 mb-0">"I was worried about the roof aesthetics, but their custom layout design looks sleek and modern. Highly recommend them for anyone looking for reliable solar solutions."</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
-        
 
+    <style>
+        .testimonial-carousel .owl-item img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .testimonial-item {
+            transition: 0.5s;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .testimonial-item:hover {
+                background: #ffffff !important;
+                box-shadow: 0 1rem 3rem rgba(0,0,0,.1) !important;
+                transform: translateY(-10px);
+            }
+    </style>
+    <!-- Testimonial End -->
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <h5 class="text-white mb-4">Address</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>232, Ambattur Red Hills Rd, Gangai Nagar, Kallikuppam, Ambattur, Chennai, 600053</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91 9876 54320</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Project Gallery</h5>
-                    <div class="row g-2">
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-1.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-4.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-5.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-6.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Newsletter</h5>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+
+                <div class="col-lg-8 col-md-6">
+                    <h5 class="text-white mb-4">Find Us</h5>
+                    <div class="position-relative w-100" style="height: 200px;">
+                        <iframe class="position-relative rounded w-100 h-100"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.645062145535!2d80.1706821!3d13.1216973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263ec81387d37%3A0x65135111d4e68e40!2s232%2C%20Ambattur%20Red%20Hills%20Rd%2C%20Kallikuppam%2C%20Ambattur%2C%20Chennai%2C%20Tamil%20Nadu%20600053!5e0!3m2!1sen!2sin!4v1700000000000"
+                                frameborder="0" style="min-height: 200px; border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a href="#">Sustain Solar Power</a>, All Right Reserved.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- Footer End -->
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 

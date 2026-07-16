@@ -225,52 +225,80 @@ font-size:17px">
 
 		</div>
 
-		<script>function calcEB() {
+		<script>
 
-                        const slabs = [
-                            { from: 1, to: 100, rate: 0, bg: "#f1f8e9" },
-                            { from: 101, to: 400, rate: 4.7, bg: "#e3f2fd" },
-                            { from: 401, to: 500, rate: 6.3, bg: "#fffde7" },
-                            { from: 501, to: 600, rate: 8.4, bg: "#fce4ec" },
-                            { from: 601, to: 800, rate: 9.45, bg: "#ede7f6" },
-                            { from: 801, to: 1000, rate: 10.5, bg: "#e0f2f1" },
-                            { from: 1001, to: Infinity, rate: 11.55, bg: "#ffebee" }
-                        ];
 
-                        let units = parseInt(document.getElementById("units").value) || 0;
-                        let remaining = units;
-                        let total = 0;
-                        let rows = "";
+			function calcEB() {
 
-                        slabs.forEach(s => {
-                            if (remaining <= 0) return;
+				let units = parseInt(document.getElementById("units").value) || 0;
 
-                            let u = Math.min(
-                                remaining,
-                                s.to === Infinity ? remaining : s.to - s.from + 1
-                            );
+				let slabs = [];
 
-                            let amt = u * s.rate;
-                            remaining -= u;
-                            total += amt;
+				if (units <= 500) {
 
-                            rows += `
-                                  <tr style="background:${s.bg}">
-                                    <td style="padding:12px">${s.from}</td>
-                                    <td>${s.to === Infinity ? units : s.to}</td>
-                                    <td>${u}</td>
-                                    <td>${s.rate}</td>
-                                    <td>${amt.toFixed(2)}</td>
-                                  </tr>
-                                `;
-                        });
+					slabs = [
+						{ from: 1, to: 100, rate: 0.00, bg: "#e8f5e9" },
+						{ from: 101, to: 200, rate: 0.00, bg: "#e3f2fd" },
+						{ from: 201, to: 400, rate: 4.70, bg: "#fff9c4" },
+						{ from: 401, to: 500, rate: 6.30, bg: "#fce4ec" }
+					];
 
-                        document.getElementById("slabTable").innerHTML = rows;
-                        document.getElementById("totalAmount").innerText =
-                            "₹ " + total.toLocaleString();
-                    }
+				} else {
 
-                    calcEB();</script>
+					slabs = [
+						{ from: 1, to: 100, rate: 0.00, bg: "#e8f5e9" },
+						{ from: 101, to: 400, rate: 4.70, bg: "#e3f2fd" },
+						{ from: 401, to: 500, rate: 6.30, bg: "#fff9c4" },
+						{ from: 501, to: 600, rate: 8.40, bg: "#fce4ec" },
+						{ from: 601, to: 800, rate: 9.45, bg: "#ede7f6" },
+						{ from: 801, to: 1000, rate: 10.50, bg: "#e0f2f1" },
+						{ from: 1001, to: Infinity, rate: 11.55, bg: "#ffebee" }
+					];
+
+				}
+
+				let total = 0;
+				let rows = "";
+
+				slabs.forEach(function (s) {
+
+					if (units < s.from) return;
+
+					let end = Math.min(units, s.to === Infinity ? units : s.to);
+
+					let slabUnits = end - s.from + 1;
+
+					if (slabUnits < 0) slabUnits = 0;
+
+					let amount = slabUnits * s.rate;
+
+					total += amount;
+
+					rows += `
+        <tr style="background:${s.bg}">
+            <td style="padding:12px">${s.from}</td>
+            <td>${end}</td>
+            <td>${slabUnits}</td>
+            <td>₹ ${s.rate.toFixed(2)}</td>
+            <td>₹ ${amount.toFixed(2)}</td>
+        </tr>`;
+				});
+
+				document.getElementById("slabTable").innerHTML = rows;
+
+				document.getElementById("totalAmount").innerHTML =
+					"₹ " + total.toLocaleString('en-IN', {
+						minimumFractionDigits: 2,
+						maximumFractionDigits: 2
+					});
+
+			}
+
+			calcEB();
+
+
+
+		</script>
 
 	</section>
 

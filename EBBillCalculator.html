@@ -59,16 +59,17 @@
 				letter-spacing: 1px;
 			}
 	</style>
-	<script>window.addEventListener("load", function () {
-        const spinner = document.getElementById("spinner");
-        spinner.classList.remove("show");
-        spinner.style.opacity = "0";
-        spinner.style.transition = "opacity .4s ease";
+	<script>
+	window.addEventListener("load", function () {
+			const spinner = document.getElementById("spinner");
+			spinner.classList.remove("show");
+			spinner.style.opacity = "0";
+			spinner.style.transition = "opacity .4s ease";
 
-        setTimeout(() => {
-            spinner.style.display = "none";
-        }, 400);
-    });</script>
+			setTimeout(() => {
+				spinner.style.display = "none";
+			}, 400);
+		});</script>
 
 	<!-- Spinner End -->
 	<!-- Navbar Start -->
@@ -119,7 +120,6 @@
 	</nav>
 	<!-- Navbar End -->
 	<!-- Page Header Start -->
-	
 	<!-- Page Header End -->
 
 
@@ -275,13 +275,13 @@ font-size:17px">
 					total += amount;
 
 					rows += `
-        <tr style="background:${s.bg}">
-            <td style="padding:12px">${s.from}</td>
-            <td>${end}</td>
-            <td>${slabUnits}</td>
-            <td>₹ ${s.rate.toFixed(2)}</td>
-            <td>₹ ${amount.toFixed(2)}</td>
-        </tr>`;
+				<tr style="background:${s.bg}">
+					<td style="padding:12px">${s.from}</td>
+					<td>${end}</td>
+					<td>${slabUnits}</td>
+					<td>₹ ${s.rate.toFixed(2)}</td>
+					<td>₹ ${amount.toFixed(2)}</td>
+				</tr>`;
 				});
 
 				document.getElementById("slabTable").innerHTML = rows;
@@ -307,11 +307,251 @@ font-size:17px">
 
 
 
+	<!-- ========================================== -->
+	<!-- SOLAR QUIZ GAME - START                   -->
+	<!-- ========================================== -->
+	<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+		<div class="container">
+			<div class="text-center mx-auto mb-5" style="max-width: 600px;">
+				<h6 class="text-primary">🎮 Play & Learn</h6>
+				<h1 class="mb-4">Solar Quiz Challenge</h1>
+				<p class="mb-0 text-muted">Test your solar energy knowledge! Answer 5 questions and see your score.</p>
+			</div>
 
+			<div class="row justify-content-center">
+				<div class="col-lg-8 col-md-10">
 
+					<!-- QUIZ CONTAINER -->
+					<div id="quizContainer" class="bg-light rounded-4 p-4 p-md-5 shadow-sm">
 
+						<!-- Question Area -->
+						<div id="questionArea">
+							<div class="d-flex justify-content-between align-items-center mb-3">
+								<span class="badge bg-primary rounded-pill px-3 py-2" id="questionCounter">Question 1 / 5</span>
+								<span class="badge bg-success rounded-pill px-3 py-2" id="scoreDisplay">⭐ 0</span>
+							</div>
+							<h4 id="questionText" class="mb-4 fw-bold">Loading question...</h4>
 
+							<!-- Options -->
+							<div id="optionsContainer" class="d-grid gap-3">
+								<!-- Options will be injected by JS -->
+							</div>
 
+							<!-- Next Button -->
+							<div class="text-center mt-4">
+								<button id="nextBtn" class="btn btn-primary px-5 rounded-pill" disabled>Next →</button>
+							</div>
+						</div>
+
+						<!-- Result Area (hidden initially) -->
+						<div id="resultArea" class="text-center d-none">
+							<i class="fa fa-sun text-warning fa-4x mb-3"></i>
+							<h2 id="resultMessage" class="mb-3">Great Job!</h2>
+							<p id="resultScore" class="fs-5 mb-4">You scored 0 / 5</p>
+							<button id="restartQuizBtn" class="btn btn-outline-primary rounded-pill px-5">🔄 Play Again</button>
+						</div>
+
+					</div>
+					<!-- END QUIZ CONTAINER -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		/* Optional extra styling for quiz */
+		.option-btn {
+			background: white;
+			border: 2px solid #dee2e6;
+			border-radius: 12px;
+			padding: 14px 20px;
+			font-weight: 500;
+			transition: all 0.2s;
+			text-align: left;
+			color: #212529;
+		}
+
+			.option-btn:hover:not(.disabled-option) {
+				border-color: #0d6efd;
+				background: #f0f7ff;
+				transform: scale(1.01);
+			}
+
+			.option-btn.correct {
+				border-color: #198754;
+				background: #d1e7dd;
+				color: #0a3622;
+			}
+
+			.option-btn.wrong {
+				border-color: #dc3545;
+				background: #f8d7da;
+				color: #58151c;
+			}
+
+			.option-btn.disabled-option {
+				opacity: 0.7;
+				cursor: not-allowed;
+			}
+
+		#quizContainer {
+			transition: all 0.3s;
+			min-height: 320px;
+		}
+	</style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+
+			// ---------- QUESTIONS ----------
+			const questions = [
+				{
+					question: 'What is the primary source of solar energy?',
+					options: ['Wind', 'Sun', 'Water', 'Coal'],
+					correct: 1
+				},
+				{
+					question: 'Which device converts sunlight directly into electricity?',
+					options: ['Solar inverter', 'Solar panel (PV)', 'Solar battery', 'Charge controller'],
+					correct: 1
+				},
+				{
+					question: 'What is the unit used to measure solar panel capacity?',
+					options: ['Kilogram (kg)', 'Kilowatt-peak (kWp)', 'Volt (V)', 'Ampere (A)'],
+					correct: 1
+				},
+				{
+					question: 'Which of these is a benefit of solar energy?',
+					options: ['Reduces electricity bills', 'Produces pollution', 'Requires fuel', 'All of the above'],
+					correct: 0
+				},
+				{
+					question: 'What does "net metering" allow solar owners to do?',
+					options: ['Sell excess power to the grid', 'Store energy in batteries', 'Get free solar panels', 'Reduce panel efficiency'],
+					correct: 0
+				}
+			];
+
+			// ---------- DOM REFS ----------
+			const questionArea = document.getElementById('questionArea');
+			const resultArea = document.getElementById('resultArea');
+			const questionText = document.getElementById('questionText');
+			const optionsContainer = document.getElementById('optionsContainer');
+			const questionCounter = document.getElementById('questionCounter');
+			const scoreDisplay = document.getElementById('scoreDisplay');
+			const nextBtn = document.getElementById('nextBtn');
+			const restartBtn = document.getElementById('restartQuizBtn');
+			const resultMessage = document.getElementById('resultMessage');
+			const resultScore = document.getElementById('resultScore');
+
+			// ---------- STATE ----------
+			let currentIndex = 0;
+			let score = 0;
+			let isAnswered = false;
+
+			// ---------- FUNCTIONS ----------
+			function loadQuestion(index) {
+				const q = questions[index];
+				if (!q) return;
+
+				isAnswered = false;
+				nextBtn.disabled = true;
+
+				// Update counter & score
+				questionCounter.textContent = `Question ${index + 1} / ${questions.length}`;
+				scoreDisplay.textContent = `⭐ ${score}`;
+
+				// Set question text
+				questionText.textContent = q.question;
+
+				// Build options
+				optionsContainer.innerHTML = '';
+				q.options.forEach((opt, i) => {
+					const btn = document.createElement('button');
+					btn.classList.add('option-btn');
+					btn.textContent = `${String.fromCharCode(65 + i)}. ${opt}`; // A., B., C., D.
+					btn.dataset.index = i;
+					btn.addEventListener('click', () => selectOption(i));
+					optionsContainer.appendChild(btn);
+				});
+
+				// Show question area, hide result
+				questionArea.classList.remove('d-none');
+				resultArea.classList.add('d-none');
+			}
+
+			function selectOption(selectedIndex) {
+				if (isAnswered) return; // already answered
+
+				const q = questions[currentIndex];
+				const isCorrect = (selectedIndex === q.correct);
+				if (isCorrect) score++;
+
+				// Disable all option buttons
+				const allOptions = document.querySelectorAll('.option-btn');
+				allOptions.forEach((btn, idx) => {
+					btn.classList.add('disabled-option');
+					btn.style.pointerEvents = 'none';
+					if (idx === q.correct) {
+						btn.classList.add('correct');
+					} else if (idx === selectedIndex && !isCorrect) {
+						btn.classList.add('wrong');
+					}
+				});
+
+				// Update score display
+				scoreDisplay.textContent = `⭐ ${score}`;
+				isAnswered = true;
+				nextBtn.disabled = false;
+			}
+
+			function goToNext() {
+				if (!isAnswered) return;
+				currentIndex++;
+				if (currentIndex < questions.length) {
+					loadQuestion(currentIndex);
+				} else {
+					// Quiz finished - show result
+					showResult();
+				}
+			}
+
+			function showResult() {
+				questionArea.classList.add('d-none');
+				resultArea.classList.remove('d-none');
+
+				const total = questions.length;
+				const percent = (score / total) * 100;
+				let msg = '';
+				if (percent === 100) msg = '🌟 Perfect! You\'re a Solar Expert!';
+				else if (percent >= 60) msg = '☀️ Good job! You know your solar!';
+				else if (percent >= 40) msg = '🌱 Not bad! Keep learning about solar.';
+				else msg = '🔋 Time to charge up your solar knowledge!';
+
+				resultMessage.textContent = msg;
+				resultScore.textContent = `You scored ${score} out of ${total}`;
+			}
+
+			function restartQuiz() {
+				currentIndex = 0;
+				score = 0;
+				isAnswered = false;
+				loadQuestion(0);
+			}
+
+			// ---------- EVENT LISTENERS ----------
+			nextBtn.addEventListener('click', goToNext);
+			restartBtn.addEventListener('click', restartQuiz);
+
+			// ---------- INIT ----------
+			loadQuestion(0);
+
+		});
+	</script>
+	<!-- ========================================== -->
+	<!-- SOLAR QUIZ GAME - END                     -->
+	<!-- ========================================== -->
 	<!-- Footer Start -->
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
